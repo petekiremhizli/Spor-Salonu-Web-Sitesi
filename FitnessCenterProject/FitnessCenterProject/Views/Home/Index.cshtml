@@ -1,0 +1,171 @@
+﻿@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+<!-- ==================== FULL WIDTH HERO ==================== -->
+<div style="
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background: url('/images/giris.jpg') center/cover no-repeat;
+    height: 100vh;
+    position: relative;
+">
+
+    <!-- Koyu overlay -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.55);
+        z-index: 1;
+    "></div>
+
+    <!-- İçerik -->
+    <div class="d-flex align-items-center justify-content-start" style="
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        padding: 50px;
+    ">
+        <div>
+            <h1 style="font-size:65px; font-weight:900; line-height:1.1; color:white;">
+                GYM <span style="color:#f2c700;">CLUB</span>
+            </h1>
+
+            <p style="font-size:22px; max-width:900px; margin-top:20px; color:white;">
+                Şehrin en modern spor salonuna hoş geldiniz! En yeni ekipmanlar, uzman eğitmenler ve yapay zekâ destekli programlarımızla hedeflerinize daha hızlı ulaşmanızı sağlıyoruz.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== HİZMETLER BÖLÜMÜ ==================== -->
+<div class="container mt-5">
+    <h4 class="text-center mb-4" style="font-size: 30px; font-weight: bold;">
+        Hizmetlerimiz
+    </h4>
+
+    <p class="text-center mb-5" style="max-width:700px; margin:auto;">
+        GYM CLUB olarak üyelerimizin ihtiyaçlarına uygun birçok hizmet sunuyoruz.
+        Her biri profesyonel eğitmenler tarafından yönlendirilen kaliteli antrenman programlarından yararlanabilirsiniz.
+    </p>
+
+    <div class="row g-4">
+
+        <!-- Fitness -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div style="height:200px; background:url('/images/fitness.jpeg') center/cover;"></div>
+                <div class="card-body">
+                    <h4 class="fw-bold">Fitness Antrenmanı</h4>
+                    <p>Ağırlık, güç ve dayanıklılık odaklı profesyonel fitness programları.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Yoga -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div style="height:200px; background:url('/images/yoga.jpg') center/cover;"></div>
+                <div class="card-body">
+                    <h4 class="fw-bold">Yoga Dersleri</h4>
+                    <p>Bedensel esneklik, nefes kontrolü ve rahatlama odaklı yoga eğitimi.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pilates -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div style="height:200px; background:url('/images/pilates.jpg') center/cover;"></div>
+                <div class="card-body">
+                    <h4 class="fw-bold">Pilates Eğitimleri</h4>
+                    <p>Core güçlendirme, duruş düzeltme ve sıkılaşma odaklı pilates çalışmaları.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<br />
+<br />
+<!-- ==================== ÇALIŞMA SAATLERİ (FULL WIDTH HERO STYLE) ==================== -->
+<section style="
+    width:100vw;
+    margin-left:calc(50% - 50vw);
+    background: url('/images/calismasaatleri.jpg') center/cover no-repeat;
+    position: relative;
+    color: white;
+    padding:100px 20px;
+">
+
+    <!-- Koyu overlay -->
+    <div style="
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background: rgba(0,0,0,0.6);
+        z-index:1;
+    "></div>
+
+    <!-- İçerik -->
+    <div style="position:relative; z-index:2; max-width:1200px; margin:auto; text-align:center;">
+
+        <!-- Başlık ve açıklama -->
+        <h2 style="font-size:48px; font-weight:900; margin-bottom:20px;">Çalışma Saatlerimiz</h2>
+        <p style="font-size:18px; margin-bottom:50px;">
+            Spor salonumuz her gün hizmetinizde! Size uygun saatlerde antrenman yapabilirsiniz.
+        </p>
+
+        <!-- Kartlar -->
+        <div class="row g-4 justify-content-center">
+
+            <!-- Pazartesi - Cuma -->
+            <div class="col-md-3">
+                <div class="card shadow-sm p-4" style="background: rgba(17,17,17,0.85); border:1px solid #333; color:white;">
+                    <h5 class="fw-bold">Pazartesi - Cuma</h5>
+                    <p>06:00 - 23:00</p>
+                </div>
+            </div>
+
+            <!-- Cumartesi -->
+            <div class="col-md-3">
+                <div class="card shadow-sm p-4" style="background: rgba(17,17,17,0.85); border:1px solid #333; color:white;">
+                    <h5 class="fw-bold">Cumartesi</h5>
+                    <p>08:00 - 21:00</p>
+                </div>
+            </div>
+
+            <!-- Pazar -->
+            <div class="col-md-3">
+                <div class="card shadow-sm p-4" style="background: rgba(17,17,17,0.85); border:1px solid #333; color:white;">
+                    <h5 class="fw-bold">Pazar</h5>
+                    <p>09:00 - 19:00</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<br />
+<br />
+
+
+<!-- ==================== YAPAY ZEKA ÖNERİ SİSTEMİ ==================== -->
+<div class="container mt-5 mb-5">
+    <h2 class="text-center mb-4" >Yapay Zekâ Destekli Egzersiz Önerisi</h2>
+
+    <div class="card p-4 shadow-sm">
+        <h4 class="fw-bold">AI ile Kişisel Egzersiz Planı</h4>
+        <p>
+            Boy, kilo ve vücut tipi bilgilerinize göre yapay zekâ tarafından kişisel egzersiz programı önerileri oluşturulacaktır.
+            Bu özellik sistemin ilerleyen aşamalarında aktif hale getirilecektir.
+        </p>
+        <button class="btn btn-dark btn-lg disabled">Yakında Hizmetinizde</button>
+    </div>
+</div>
