@@ -9,7 +9,7 @@ namespace FitnessCenterProject.Controllers
             return View();
         }
 
-        public IActionResult Register()
+        public IActionResult SignUp()
         {
             return View();
         }
