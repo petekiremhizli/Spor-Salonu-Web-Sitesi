@@ -1,31 +1,41 @@
-﻿@{
-    ViewData["Title"] = "Kayıt Ol";
-}
+﻿@model FitnessCenterProject.Models.SignUpViewModel
 
 <div class="row justify-content-center mt-5">
     <div class="col-md-4">
 
         <h3 class="text-center mb-4">Kayıt Ol</h3>
 
-        <form>
+        <form asp-action="SignUp" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
             <div class="mb-3">
-                <label class="form-label">Ad Soyad</label>
-                <input type="text" class="form-control" placeholder="Adınız Soyadınız" />
+                <label class="form-label">Ad</label>
+                <input asp-for="Ad" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Soyad</label>
+                <input asp-for="Soyad" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Telefon</label>
+                <input asp-for="Telefon" class="form-control" />
             </div>
 
             <div class="mb-3">
                 <label class="form-label">E-posta</label>
-                <input type="email" class="form-control" placeholder="ornek@mail.com" />
+                <input asp-for="Email" class="form-control" />
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Şifre</label>
-                <input type="password" class="form-control" placeholder="••••••" />
+                <input asp-for="Password" class="form-control" />
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Şifre Tekrar</label>
-                <input type="password" class="form-control" placeholder="••••••" />
+                <input asp-for="ConfirmPassword" class="form-control" />
             </div>
 
             <button class="btn btn-success w-100" type="submit">Kayıt Ol</button>
@@ -38,3 +48,7 @@
 
     </div>
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

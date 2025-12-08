@@ -1,0 +1,29 @@
+﻿@model FitnessCenterProject.Models.Hizmet
+
+<h3>Hizmet Ekle</h3>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label>Hizmet Adı</label>
+        <input asp-for="Ad" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Süre (Dakika)</label>
+        <input asp-for="Sure" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Ücret</label>
+        <input asp-for="Ucret" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+    <a asp-controller="Admin" asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

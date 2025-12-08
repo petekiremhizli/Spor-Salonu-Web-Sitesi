@@ -9,11 +9,11 @@ namespace FitnessCenterProject.Models
 
 
         [ForeignKey("Uye")]
-        public int UyeId { get; set; }
+        public string UyeId { get; set; }
         public Uye Uye { get; set; }
 
 
-        [ForeignKey("Anrenor")]
+        [ForeignKey("Antrenor")]
 
         public int AntrenorId { get; set; }
         public Antrenor Antrenor { get; set; }

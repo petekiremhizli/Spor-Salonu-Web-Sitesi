@@ -17,13 +17,13 @@ namespace FitnessCenterProject.Models
 
 
         // Antrenörün verebileceği hizmetler (Many-to-Many)
-        public ICollection<AntrenorHizmet> AntrenorHizmetler { get; set; }
+        public ICollection<AntrenorHizmet>? AntrenorHizmetler { get; set; }
 
         // Antrenörün randevuları
-        public ICollection<Randevu> Randevular { get; set; }
+        public ICollection<Randevu>? Randevular { get; set; }
 
         // Müsaitlik saatleri
-        public ICollection<Musaitlik> Musaitlikler { get; set; }
+        public ICollection<Musaitlik>? Musaitlikler { get; set; }
 
 
     }

@@ -19,10 +19,10 @@ namespace FitnessCenterProject.Models
         public decimal Ucret { get; set; }       // Ücret
 
         // Bu hizmeti verebilecek antrenörler
-        public ICollection<AntrenorHizmet> AntrenorHizmetler { get; set; }
+        public ICollection<AntrenorHizmet>? AntrenorHizmetler { get; set; }
 
         // Bu hizmet için alınan randevular
-        public ICollection<Randevu> Randevular { get; set; }
+        public ICollection<Randevu>? Randevular { get; set; }
     }
 
 
