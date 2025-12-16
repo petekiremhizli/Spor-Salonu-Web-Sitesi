@@ -28,6 +28,7 @@ namespace FitnessCenterProject.Models
         public DateTime BaslangicZamani { get; set; }
 
 
+
         [Required(ErrorMessage = "Bitiş zamanı zorunludur.")]
         public DateTime BitisZamani { get; set; }  // BaslangicZamani + Hizmet.Sure
 

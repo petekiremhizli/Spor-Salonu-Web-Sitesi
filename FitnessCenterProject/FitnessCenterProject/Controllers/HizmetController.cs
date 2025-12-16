@@ -2,6 +2,7 @@
 using FitnessCenterProject.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FitnessCenterProject.Controllers
 {
@@ -78,10 +79,33 @@ namespace FitnessCenterProject.Controllers
 
             return View(hizmet);
         }
+        // GET: Hizmet/Delete/5
+        public IActionResult Delete(int id)
+        {
+            var hizmet = _context.Hizmetler
+                .Include(h => h.AntrenorHizmetler)
+                .FirstOrDefault(h => h.Id == id);
 
-        [HttpPost]
+            if (hizmet == null)
+                return NotFound();
+
+            // ❌ Bu hizmet kullanılıyor mu?
+            if (hizmet.AntrenorHizmetler.Any())
+            {
+                TempData["Error"] =
+                    "Bu hizmete sahip antrenör bulunmaktadır. Önce antrenörü siliniz.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            // ✅ Kullanılmıyorsa onay sayfası
+            return View(hizmet);
+        }
+
+
+        //POST
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public IActionResult Remove(int id)
+        public IActionResult DeleteConfirmed(int id)
         {
             var hizmet = _context.Hizmetler.Find(id);
             if (hizmet == null)
@@ -90,8 +114,13 @@ namespace FitnessCenterProject.Controllers
             _context.Hizmetler.Remove(hizmet);
             _context.SaveChanges();
 
-            return RedirectToAction(nameof(Index));
+            TempData["Success"] = "Hizmet başarıyla silindi.";
+            return RedirectToAction("Index", "Hizmet");
+
         }
+
+
+
 
     }
 }

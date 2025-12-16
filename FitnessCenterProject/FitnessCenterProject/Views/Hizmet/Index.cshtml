@@ -2,6 +2,27 @@
 
 <h3>Hizmetler</h3>
 
+@{
+    var success = TempData["Success"];
+    var error = TempData["Error"];
+}
+
+@if (success != null)
+{
+    <div class="alert alert-success alert-dismissible fade show">
+        @success
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+@if (error != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show">
+        @error
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
 <a asp-action="Create" class="btn btn-success mb-3">
     + Yeni Hizmet Ekle
 </a>
@@ -23,7 +44,7 @@
             <td>
                 <a asp-action="Details" asp-route-id="@h.Id" class="btn btn-info btn-sm">Detay</a>
                 <a asp-action="Update" asp-route-id="@h.Id" class="btn btn-warning btn-sm">Düzenle</a>
-                <a asp-action="Remove" asp-route-id="@h.Id" class="btn btn-danger btn-sm">Sil</a>
+                <a asp-action="Delete" asp-route-id="@h.Id" class="btn btn-danger btn-sm">Sil</a>
             </td>
         </tr>
     }

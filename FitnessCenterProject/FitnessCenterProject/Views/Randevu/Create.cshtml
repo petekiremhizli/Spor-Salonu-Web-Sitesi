@@ -1,0 +1,57 @@
+﻿@model FitnessCenterProject.Models.Randevu
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <!-- HİZMET -->
+    <div class="mb-3">
+        <label>Hizmet</label>
+        <select asp-for="HizmetId" class="form-select" id="hizmetSelect">
+            <option value="">-- Hizmet Seçiniz --</option>
+            @foreach (var h in ViewBag.Hizmetler)
+            {
+                <option value="@h.Id">@h.Ad</option>
+            }
+        </select>
+    </div>
+
+    <!-- ANTRENÖR -->
+    <div class="mb-3">
+        <label>Antrenör</label>
+        <select asp-for="AntrenorId" class="form-select" id="antrenorSelect">
+            <option value="">-- Önce Hizmet Seçiniz --</option>
+        </select>
+    </div>
+
+    <!-- TARİH -->
+    <div class="mb-3">
+        <label>Başlangıç Zamanı</label>
+        <input asp-for="BaslangicZamani" type="datetime-local" class="form-control" />
+    </div>
+
+    <button class="btn btn-success w-100">Randevu Al</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        $('#hizmetSelect').change(function () {
+            var hizmetId = $(this).val();
+            $('#antrenorSelect').empty();
+
+            if (hizmetId) {
+                $.get('/Randevu/GetAntrenorlerByHizmet',
+                    { hizmetId: hizmetId },
+                    function (data) {
+                        $('#antrenorSelect').append('<option value="">-- Seçiniz --</option>');
+                        $.each(data, function (i, item) {
+                            $('#antrenorSelect').append(
+                                `<option value="${item.id}">${item.adSoyad}</option>`
+                            );
+                        });
+                    });
+            }
+        });
+    </script>
+}

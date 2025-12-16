@@ -1,0 +1,17 @@
+﻿@model FitnessCenterProject.Models.Hizmet
+
+<h3>Bu hizmeti silmek istediğinize emin misiniz?</h3>
+
+<form asp-action="Delete" method="post">
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-danger">
+        Evet, Sil
+    </button>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Vazgeç
+    </a>
+</form>

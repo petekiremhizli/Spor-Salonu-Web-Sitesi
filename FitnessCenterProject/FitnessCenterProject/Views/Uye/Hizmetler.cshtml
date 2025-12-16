@@ -1,0 +1,72 @@
+﻿@model List<FitnessCenterProject.Models.Hizmet>
+
+@{
+    ViewData["Title"] = "Hizmetler";
+}
+
+<div class="container mt-5">
+
+    <h2 class="text-center fw-bold mb-5">
+        🏋️ Spor Salonu Hizmetlerimiz
+    </h2>
+
+    <div class="row g-4">
+
+        @foreach (var hizmet in Model)
+        {
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card shadow-lg h-100 hizmet-card">
+                    <div class="card-body d-flex flex-column">
+
+                        <h4 class="fw-bold text-primary">
+                            @hizmet.Ad
+                        </h4>
+
+                        <div class="mt-auto">
+
+                            <h5 class="text-success fw-bold">
+                                💰 @hizmet.Ucret ₺
+                            </h5>
+
+                            <hr />
+
+                            <strong>👤 Antrenörler</strong>
+                            <div class="mt-2">
+                                @if (hizmet.AntrenorHizmetler.Any())
+                                {
+                                    foreach (var ah in hizmet.AntrenorHizmetler)
+                                    {
+                                        <span class="badge bg-info text-dark me-1 mb-1">
+                                            @ah.Antrenor.AdSoyad
+                                        </span>
+                                    }
+                                }
+                                else
+                                {
+                                    <span class="text-muted">Henüz atanmadı</span>
+                                }
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        }
+
+    </div>
+</div>
+
+<style>
+    .hizmet-card {
+        border-radius: 18px;
+        transition: all 0.3s ease;
+    }
+
+        .hizmet-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.18);
+        }
+</style>

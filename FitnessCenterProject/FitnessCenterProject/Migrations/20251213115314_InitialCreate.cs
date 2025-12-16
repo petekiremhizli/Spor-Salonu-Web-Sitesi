@@ -17,8 +17,7 @@ namespace FitnessCenterProject.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AdSoyad = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Uzmanlik = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                    AdSoyad = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
