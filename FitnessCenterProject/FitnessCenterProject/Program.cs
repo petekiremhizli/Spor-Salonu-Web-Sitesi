@@ -2,6 +2,7 @@
 using FitnessCenterProject.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using FitnessCenterProject.Services; // AIService'in bulunduğu namespace
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// ⭐️ AIService Kaydı: HomeController'a enjekte edilebilmesi için eklendi
+builder.Services.AddScoped<AIService>(); // Tek eksik olan ve eklenen satır burasıdır.
 
 /// ✅ IDENTITY
 builder.Services.AddIdentity<Uye, IdentityRole>(options =>
