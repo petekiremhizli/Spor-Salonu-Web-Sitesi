@@ -1,4 +1,216 @@
-﻿<div class="text-center">
-    <h1>about</h1>
+﻿@{
+    ViewData["Title"] = "Hakkımızda";
+}
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<style>
+    /* Premium Hover Efektleri */
+    .hover-card {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: none;
+    }
+
+        .hover-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+        }
+
+    /* İkon Animasyonu */
+    .icon-box {
+        transition: all 0.3s ease;
+    }
+
+    .hover-card:hover .icon-box {
+        transform: scale(1.2) rotate(8deg);
+        color: #f2c700 !important;
+    }
+
+    /* Eğitmen Resim Zoom */
+    .trainer-img-container {
+        overflow: hidden;
+        position: relative;
+    }
+
+        .trainer-img-container img {
+            transition: transform 0.6s ease;
+        }
+
+    .hover-card:hover .trainer-img-container img {
+        transform: scale(1.1);
+    }
+
+    /* İstatistik Rakamları */
+    .stat-number {
+        font-size: 2.8rem;
+        font-weight: 900;
+        color: #f2c700;
+        line-height: 1;
+    }
+
+    /* Hero Giriş Animasyonu */
+    .fade-in-up {
+        animation: fadeInUp 1s ease-out;
+    }
+
+    @@keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Sosyal Medya Hover */
+    .social-link {
+        transition: color 0.3s ease;
+        font-size: 1.2rem;
+    }
+
+        .social-link:hover {
+            color: #f2c700 !important;
+        }
+</style>
+
+<div style="
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('/images/hakkimizda_hero.jpg') center/cover no-repeat fixed;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+">
+    <div class="fade-in-up">
+        <h1 style="font-size:75px; font-weight:900; color:white; letter-spacing: -2px; text-transform: uppercase;">
+            BİZ <span style="color:#f2c700;">KİMİZ?</span>
+        </h1>
+        <div style="width: 100px; height: 6px; background: #f2c700; margin: 15px auto;"></div>
+        <p style="color: #bbb; font-size: 22px; max-width: 700px; margin: 20px auto; font-weight: 300;">
+            Geleceğin spor teknolojisini, bugünün disipliniyle birleştiriyoruz.
+        </p>
+    </div>
+</div>
+
+<div class="container" style="margin-top: -60px; position: relative; z-index: 10;">
+    <div class="row g-4 text-center">
+        <div class="col-md-4">
+            <div class="card p-4 shadow-lg hover-card bg-white border-0">
+                <div class="stat-number">15+</div>
+                <div class="fw-bold text-dark text-uppercase mt-2 small" style="letter-spacing:1px;">Yıllık Tecrübe</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-4 shadow-lg hover-card bg-white border-0">
+                <div class="stat-number">2500+</div>
+                <div class="fw-bold text-dark text-uppercase mt-2 small" style="letter-spacing:1px;">Aktif Üye</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-4 shadow-lg hover-card bg-white border-0">
+                <div class="stat-number">50+</div>
+                <div class="fw-bold text-dark text-uppercase mt-2 small" style="letter-spacing:1px;">Uzman Eğitmen</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5 my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-11">
+            <div class="text-center mb-5">
+                <h6 class="text-warning fw-bold text-uppercase mb-3" style="letter-spacing: 3px;">Vizyonumuz</h6>
+                <h2 class="display-4 fw-bold mb-4">Sıradanlıktan Kurtulun, <br>Potansiyelinizi Keşfedin!</h2>
+            </div>
+
+            <div class="row mt-2 align-items-center">
+                <div class="col-md-6 text-start border-end border-warning border-4 pe-md-5">
+                    <p class="lead text-dark fw-bold">GYM CLUB, 2010 yılında sadece bir spor salonu olarak değil, bir değişim merkezi olarak kuruldu.</p>
+                    <p class="text-muted" style="line-height: 1.8;">
+                        Vizyonumuz, sporun her birey için erişilebilir, teknolojik ve sonuç odaklı olmasıdır. Bugün, son teknoloji ekipmanlar ve yapay zeka entegrasyonu ile antrenman verimliliğini artıran benzersiz bir sistem sunuyoruz.
+                    </p>
+                    <p class="text-muted" style="line-height: 1.8;">
+                        Bizim için spor sadece fiziksel bir gelişim değil, bir zihin yapısıdır. Sınırlarını aşmak isteyen her bireyin yanındayız.
+                    </p>
+                </div>
+
+                <div class="col-md-6 text-start ps-md-5 mt-4 mt-md-0">
+                    <div class="d-grid gap-3">
+                        <div class="d-flex align-items-center p-3 bg-light rounded-3 hover-card shadow-sm">
+                            <i class="bi bi-clock-history text-warning me-3 fs-2"></i>
+                            <div>
+                                <h6 class="fw-bold mb-0">7/24 Kesintisiz Erişim</h6>
+                                <p class="text-muted mb-0 small">Kendi zamanınızın patronu olun.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center p-3 bg-light rounded-3 hover-card shadow-sm">
+                            <i class="bi bi-cpu-fill text-warning me-3 fs-2"></i>
+                            <div>
+                                <h6 class="fw-bold mb-0">Yapay Zekâ Entegrasyonu</h6>
+                                <p class="text-muted mb-0 small">Kişiselleştirilmiş akıllı programlar.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center p-3 bg-light rounded-3 hover-card shadow-sm">
+                            <i class="bi bi-gem text-warning me-3 fs-2"></i>
+                            <div>
+                                <h6 class="fw-bold mb-0">Premium Ekipmanlar</h6>
+                                <p class="text-muted mb-0 small">Dünya markası ekipmanlarla güvenli antrenman.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section style="width:100vw; margin-left:calc(50% - 50vw); background: #0c0c0c; color: white; padding: 100px 0;">
+    <div class="container text-center">
+        <h2 class="fw-bold display-6 mb-5">Neden <span style="color:#f2c700;">GYM CLUB?</span></h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card bg-transparent border-0 hover-card p-4">
+                    <div class="icon-box mb-3 text-warning">
+                        <i class="bi bi-lightning-charge-fill" style="font-size: 3.5rem;"></i>
+                    </div>
+                    <h4 class="fw-bold">Yüksek Enerji</h4>
+                    <p class="text-secondary">Sizi her zaman motive tutacak modern ses ve ışık sistemleri.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-transparent border-0 hover-card p-4">
+                    <div class="icon-box mb-3 text-warning">
+                        <i class="bi bi-graph-up-arrow" style="font-size: 3.5rem;"></i>
+                    </div>
+                    <h4 class="fw-bold">Hızlı Gelişim</h4>
+                    <p class="text-secondary">Hedeflerinize bilimsel ve veriye dayalı yöntemlerle ulaşın.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-transparent border-0 hover-card p-4">
+                    <div class="icon-box mb-3 text-warning">
+                        <i class="bi bi-shield-shaded" style="font-size: 3.5rem;"></i>
+                    </div>
+                    <h4 class="fw-bold">Güvenlik</h4>
+                    <p class="text-secondary">Sakatlanmaları önleyen profesyonel teknik gözetim.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="container mb-5 pt-4">
+    <div class="p-5 text-center bg-dark text-white rounded-4 shadow-lg" style="background: linear-gradient(45deg, #000, #222) !important;">
+        <h2 class="fw-bold display-6">Sizin Hikayeniz Ne Zaman Başlıyor?</h2>
+        <p class="lead mt-3 text-secondary">GYM CLUB topluluğuna katılarak hayatınızı değiştirmeye başlayın.</p>
+        <a href="/Iletisim" class="btn btn-warning btn-lg mt-3 px-5 fw-bold rounded-pill shadow">Bize Katılın</a>
+    </div>
 </div>

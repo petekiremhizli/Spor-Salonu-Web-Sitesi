@@ -2,22 +2,17 @@
 using FitnessCenterProject.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using FitnessCenterProject.Services; // AIService'in bulunduğu namespace
 
 var builder = WebApplication.CreateBuilder(args);
 
-/// MVC
+// 1. SERVİSLER
 builder.Services.AddControllersWithViews();
 
-/// DB CONTEXT
+// VERİTABANI
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// ⭐️ AIService Kaydı: HomeController'a enjekte edilebilmesi için eklendi
-builder.Services.AddScoped<AIService>(); // Tek eksik olan ve eklenen satır burasıdır.
-
-/// ✅ IDENTITY
+// IDENTITY AYARLARI
 builder.Services.AddIdentity<Uye, IdentityRole>(options =>
 {
     options.Password.RequireDigit = true;
@@ -29,7 +24,7 @@ builder.Services.AddIdentity<Uye, IdentityRole>(options =>
 .AddEntityFrameworkStores<AppDbContext>()
 .AddDefaultTokenProviders();
 
-/// ✅ COOKIE AYARLARI
+// COOKIE (GİRİŞ YÖNLENDİRMESİ)
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Account/Login";
@@ -38,44 +33,47 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 var app = builder.Build();
 
-/// ✅ ROLE + ADMIN SEED (DOĞRU YER)
+// 2. ADMIN VE ROL SEEDLEME (OTOMATİK OLUŞTURMA)
 using (var scope = app.Services.CreateScope())
 {
-    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<Uye>>();
-
-    // Roller
-    string[] roles = { "Admin", "Uye" };
-    foreach (var role in roles)
+    var services = scope.ServiceProvider;
+    try
     {
-        if (!await roleManager.RoleExistsAsync(role))
-            await roleManager.CreateAsync(new IdentityRole(role));
-    }
+        var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+        var userManager = services.GetRequiredService<UserManager<Uye>>();
 
-    // Admin kullanıcı
-    string adminEmail = "g231210030@sakarya.edu.tr";
-    var adminUser = await userManager.FindByEmailAsync(adminEmail);
-
-    if (adminUser == null)
-    {
-        adminUser = new Uye
+        string[] roles = { "Admin", "Uye" };
+        foreach (var role in roles)
         {
-            UserName = adminEmail,
-            Email = adminEmail,
-            Ad = "Admin",
-            Soyad = "User",
-            Telefon = "0000000000",
-            EmailConfirmed = true
-        };
+            if (!await roleManager.RoleExistsAsync(role))
+                await roleManager.CreateAsync(new IdentityRole(role));
+        }
 
-        var result = await userManager.CreateAsync(adminUser, "Sau123456!");
-
-        if (result.Succeeded)
-            await userManager.AddToRoleAsync(adminUser, "Admin");
+        string adminEmail = "g231210030@sakarya.edu.tr";
+        var adminUser = await userManager.FindByEmailAsync(adminEmail);
+        if (adminUser == null)
+        {
+            adminUser = new Uye
+            {
+                UserName = adminEmail,
+                Email = adminEmail,
+                Ad = "Admin",
+                Soyad = "User",
+                Telefon = "0000000000",
+                EmailConfirmed = true
+            };
+            var result = await userManager.CreateAsync(adminUser, "Sau123456!");
+            if (result.Succeeded)
+                await userManager.AddToRoleAsync(adminUser, "Admin");
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Seed hatası: " + ex.Message);
     }
 }
 
-/// MIDDLEWARE
+// 3. ARA KATMANLAR (MIDDLEWARE)
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -83,15 +81,13 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+app.UseStaticFiles(); // CSS ve JS dosyaları için şart
 
 app.UseRouting();
 
-/// ❗ SIRASI ÇOK ÖNEMLİ
-app.UseAuthentication();
-app.UseAuthorization();
+app.UseAuthentication(); // Önce kimlik doğrulama
+app.UseAuthorization();  // Sonra yetkilendirme
 
-/// ROUTE
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

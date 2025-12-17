@@ -8,7 +8,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FitnessCenterProject.Controllers
 {
-    [Authorize(Roles = "Uye")]
+    [Authorize(Roles = "Uye,Admin")]
+    
     public class RandevuController : Controller
     {
         private readonly AppDbContext _context;
