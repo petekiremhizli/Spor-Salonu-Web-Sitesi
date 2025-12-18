@@ -1,6 +1,4 @@
-﻿@model List<Hizmet>
-
-@{
+﻿@{
     ViewData["Title"] = "Hizmetlerimiz";
 }
 
@@ -12,7 +10,6 @@
         --gym-dark: #111111;
     }
 
-    /* Hero Bölümü Düzenlemesi */
     .services-header {
         width: 100vw;
         margin-left: calc(50% - 50vw);
@@ -23,7 +20,6 @@
         margin-bottom: 80px;
     }
 
-    /* Kart Tasarımı */
     .service-card {
         border: none;
         border-radius: 25px;
@@ -61,7 +57,6 @@
                 color: #ffffff !important;
             }
 
-    /* İkon Stili */
     .icon-wrapper {
         width: 90px;
         height: 90px;
@@ -82,7 +77,6 @@
         transform: rotateY(180deg);
     }
 
-    /* Fiyat Alanı */
     .price-tag {
         font-size: 28px;
         font-weight: 900;
@@ -100,7 +94,6 @@
         margin-right: 2px;
     }
 
-    /* Alt Çizgi Animasyonu */
     .title-underline {
         width: 50px;
         height: 4px;
@@ -116,7 +109,7 @@
 
 <section class="services-header shadow-lg">
     <div class="container">
-        <h1 class="display-3 fw-bold mb-3 animate__animated animate__fadeInDown">HİZMETLERİMİZ</h1>
+        <h1 class="display-3 fw-bold mb-3">HİZMETLERİMİZ</h1>
         <p class="lead opacity-75 mx-auto fs-4" style="max-width: 800px; font-weight: 300;">
             Kişisel hedeflerinize en uygun antrenmanı seçin ve profesyonel dünyamıza adım atın.
         </p>
@@ -124,72 +117,15 @@
 </section>
 
 <div class="container mb-5 pb-5">
-    <div class="row g-5">
-        @if (Model != null && Model.Any())
-        {
-            @foreach (var h in Model)
-            {
-                <div class="col-xl-4 col-md-6">
-                    <div class="card h-100 service-card shadow-sm p-4">
-                        <div class="card-body d-flex flex-column text-center">
+    <div class="row g-5" id="servicesContainer">
+        <!-- API'den gelen hizmetler buraya eklenecek -->
+    </div>
 
-                            <div class="icon-wrapper mx-auto shadow-sm">
-                                @if (h.Ad.Contains("Yoga", StringComparison.OrdinalIgnoreCase))
-                                {
-                                    <i class="bi bi-body-text"></i>
-                                }
-                                else if (h.Ad.Contains("Pilates", StringComparison.OrdinalIgnoreCase))
-                                {
-                                    <i class="bi bi-infinity"></i>
-                                }
-                                else if (h.Ad.Contains("Fitness", StringComparison.OrdinalIgnoreCase))
-                                {
-                                    <i class="bi bi-capslock-fill"></i>
-                                }
-                                else
-                                {
-                                    <i class="bi bi-fire"></i>
-                                }
-                            </div>
-
-                            <h4 class="fw-bold mb-1">@h.Ad</h4>
-                            <div class="title-underline"></div>
-
-                            <p class="text-muted px-3 mb-4 mt-2" style="font-size: 0.95rem;">
-                                Uzman kadromuzla hazırlanan @h.Ad seansları, @h.Sure dakikalık yoğun programlarla sizi hedefinize ulaştırır.
-                            </p>
-
-                            <div class="d-flex justify-content-center gap-2 mb-4">
-                                <span class="badge rounded-pill bg-light text-dark border py-2 px-3">
-                                    <i class="bi bi-stopwatch me-1 text-warning"></i> @h.Sure Dakika
-                                </span>
-                                <span class="badge rounded-pill bg-light text-dark border py-2 px-3">
-                                    <i class="bi bi-person-check me-1 text-warning"></i> Birebir
-                                </span>
-                            </div>
-
-                            <div class="mt-auto">
-                                <div class="price-tag mb-4">
-                                    <span class="currency">₺</span>@h.Ucret
-                                </div>
-                                <a href="/Iletisim" class="btn btn-warning w-100 rounded-pill fw-bold py-3 text-uppercase shadow-sm">
-                                    HEMEN BAŞLA
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
-        }
-        else
-        {
-            <div class="col-12 text-center py-5">
-                <div class="alert alert-light border-dashed">
-                    <i class="bi bi-search fs-1 text-muted d-block mb-3"></i>
-                    <h5 class="text-muted">Şu an aktif bir hizmet bulunmamaktadır.</h5>
-                </div>
-            </div>
-        }
+    <div id="noService" class="col-12 text-center py-5 d-none">
+        <div class="alert alert-light border-dashed">
+            <i class="bi bi-search fs-1 text-muted d-block mb-3"></i>
+            <h5 class="text-muted">Şu an aktif bir hizmet bulunmamaktadır.</h5>
+        </div>
     </div>
 </div>
 
@@ -211,3 +147,75 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            loadServices();
+        });
+
+        function getIcon(ad) {
+            if (ad.toLowerCase().includes("yoga")) return "bi-body-text";
+            if (ad.toLowerCase().includes("pilates")) return "bi-infinity";
+            if (ad.toLowerCase().includes("fitness")) return "bi-capslock-fill";
+            return "bi-fire";
+        }
+
+        function loadServices() {
+            fetch('/api/HizmetApi')
+                .then(res => res.json())
+                .then(data => {
+                    const container = document.getElementById("servicesContainer");
+
+                    if (!data || data.length === 0) {
+                        document.getElementById("noService").classList.remove("d-none");
+                        return;
+                    }
+
+                    data.forEach(h => {
+                        container.innerHTML += `
+                        <div class="col-xl-4 col-md-6">
+                            <div class="card h-100 service-card shadow-sm p-4">
+                                <div class="card-body d-flex flex-column text-center">
+
+                                    <div class="icon-wrapper mx-auto shadow-sm">
+                                        <i class="bi ${getIcon(h.ad)}"></i>
+                                    </div>
+
+                                    <h4 class="fw-bold mb-1">${h.ad}</h4>
+                                    <div class="title-underline"></div>
+
+                                    <p class="text-muted px-3 mb-4 mt-2" style="font-size: 0.95rem;">
+                                        Uzman kadromuzla hazırlanan ${h.ad} seansları,
+                                        ${h.sure} dakikalık yoğun programlarla sizi hedefinize ulaştırır.
+                                    </p>
+
+                                    <div class="d-flex justify-content-center gap-2 mb-4">
+                                        <span class="badge rounded-pill bg-light text-dark border py-2 px-3">
+                                            <i class="bi bi-stopwatch me-1 text-warning"></i>
+                                            ${h.sure} Dakika
+                                        </span>
+                                        <span class="badge rounded-pill bg-light text-dark border py-2 px-3">
+                                            <i class="bi bi-person-check me-1 text-warning"></i>
+                                            Birebir
+                                        </span>
+                                    </div>
+
+                                    <div class="mt-auto">
+                                        <div class="price-tag mb-4">
+                                            <span class="currency">₺</span>${h.ucret}
+                                        </div>
+                                        <a href="/Iletisim"
+                                           class="btn btn-warning w-100 rounded-pill fw-bold py-3 text-uppercase shadow-sm">
+                                            HEMEN BAŞLA
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
+                    });
+                })
+                .catch(err => console.error("Hizmetler yüklenemedi:", err));
+        }
+    </script>
+}
