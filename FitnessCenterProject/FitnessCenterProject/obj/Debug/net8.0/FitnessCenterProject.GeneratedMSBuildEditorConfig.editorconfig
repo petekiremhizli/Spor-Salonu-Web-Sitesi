@@ -64,6 +64,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW50cmVub3JcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/petek/OneDrive/Desktop/Spor-Salonu-Web-Sitesi/FitnessCenterProject/FitnessCenterProject/Views/Diyet/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGl5ZXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/petek/OneDrive/Desktop/Spor-Salonu-Web-Sitesi/FitnessCenterProject/FitnessCenterProject/Views/Hizmet/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGl6bWV0XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -100,24 +104,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZXJ2aWNlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/petek/OneDrive/Desktop/Spor-Salonu-Web-Sitesi/FitnessCenterProject/FitnessCenterProject/Views/Musaitliks/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzYWl0bGlrc1xDcmVhdGUuY3NodG1s
+[C:/Users/petek/OneDrive/Desktop/Spor-Salonu-Web-Sitesi/FitnessCenterProject/FitnessCenterProject/Views/Musaitlik/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzYWl0bGlrXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/petek/OneDrive/Desktop/Spor-Salonu-Web-Sitesi/FitnessCenterProject/FitnessCenterProject/Views/Musaitliks/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzYWl0bGlrc1xEZWxldGUuY3NodG1s
+[C:/Users/petek/OneDrive/Desktop/Spor-Salonu-Web-Sitesi/FitnessCenterProject/FitnessCenterProject/Views/Musaitlik/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzYWl0bGlrXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/petek/OneDrive/Desktop/Spor-Salonu-Web-Sitesi/FitnessCenterProject/FitnessCenterProject/Views/Musaitliks/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzYWl0bGlrc1xEZXRhaWxzLmNzaHRtbA==
+[C:/Users/petek/OneDrive/Desktop/Spor-Salonu-Web-Sitesi/FitnessCenterProject/FitnessCenterProject/Views/Musaitlik/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzYWl0bGlrXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/petek/OneDrive/Desktop/Spor-Salonu-Web-Sitesi/FitnessCenterProject/FitnessCenterProject/Views/Musaitliks/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzYWl0bGlrc1xFZGl0LmNzaHRtbA==
+[C:/Users/petek/OneDrive/Desktop/Spor-Salonu-Web-Sitesi/FitnessCenterProject/FitnessCenterProject/Views/Musaitlik/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzYWl0bGlrXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/petek/OneDrive/Desktop/Spor-Salonu-Web-Sitesi/FitnessCenterProject/FitnessCenterProject/Views/Musaitliks/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzYWl0bGlrc1xJbmRleC5jc2h0bWw=
+[C:/Users/petek/OneDrive/Desktop/Spor-Salonu-Web-Sitesi/FitnessCenterProject/FitnessCenterProject/Views/Musaitlik/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzYWl0bGlrXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/petek/OneDrive/Desktop/Spor-Salonu-Web-Sitesi/FitnessCenterProject/FitnessCenterProject/Views/Randevu/Create.cshtml]

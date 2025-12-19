@@ -157,15 +157,20 @@
 
 
 <!-- ==================== YAPAY ZEKA ÖNERİ SİSTEMİ ==================== -->
-<div clYapayZekaEntegrasyonub-5">
-    <h2 class="text-center mb-4" >Yapay Zekâ Destekli Egzersiz Önerisi</h2>
+<div class="mb-5">
+    <h2 class="text-center mb-4">Yapay Zekâ Destekli Egzersiz Önerisi</h2>
 
     <div class="card p-4 shadow-sm">
         <h4 class="fw-bold">AI ile Kişisel Egzersiz Planı</h4>
         <p>
-            Boy, kilo ve vücut tipi bilgilerinize göre yapay zekâ tarafından kişisel egzersiz programı önerileri oluşturulacaktır.
-            Bu özellik sistemin ilerleyen aşamalarında aktif hale getirilecektir.
+            Boy, kilo ve vücut tipi bilgilerinize göre yapay zekâ tarafından
+            kişisel egzersiz programı önerileri oluşturulacaktır.
         </p>
-        <button class="btn btn-dark btn-lg disabled">Yakında Hizmetinizde</button>
+
+        <a asp-controller="Diyet"
+           asp-action="Index"
+           class="btn btn-dark btn-lg">
+            Diyet & Egzersiz Önerisi Al
+        </a>
     </div>
 </div>

@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Diyet & AI Önerisi";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-5">
+
+                    <h2 class="text-center fw-bold mb-3">
+                        🥗 Yapay Zekâ Destekli Diyet Önerisi
+                    </h2>
+
+                    <p class="text-center text-muted mb-4">
+                        Fiziksel bilgilerinize göre size özel diyet ve beslenme önerileri oluşturulur.
+                    </p>
+
+                    <form asp-action="Oneri" method="post">
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="number" name="boy" class="form-control form-control-lg"
+                                       placeholder="Boy (cm)" required />
+                            </div>
+
+                            <div class="col-md-6">
+                                <input type="number" name="kilo" class="form-control form-control-lg"
+                                       placeholder="Kilo (kg)" required />
+                            </div>
+
+                            <div class="col-md-6">
+                                <input type="number" name="yas" class="form-control form-control-lg"
+                                       placeholder="Yaş" required />
+                            </div>
+
+                            <div class="col-md-6">
+                                <select name="cinsiyet" class="form-select form-select-lg" required>
+                                    <option value="">Cinsiyet</option>
+                                    <option value="Erkek">Erkek</option>
+                                    <option value="Kadın">Kadın</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <select name="hedef" class="form-select form-select-lg" required>
+                                    <option value="">Hedefiniz</option>
+                                    <option value="Kilo Vermek">Kilo Vermek</option>
+                                    <option value="Kilo Almak">Kilo Almak</option>
+                                    <option value="Kilo Korumak">Kiloyu Korumak</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-dark btn-lg rounded-3">
+                                🤖 Diyet Önerisi Al
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
