@@ -1,0 +1,87 @@
+﻿@model List<FitnessCenterProject.Models.Randevu>
+
+@{
+    ViewData["Title"] = "Randevu Onay";
+}
+<br />
+<a asp-controller="Adminn" asp-action="Index" class="btn btn-secondary">
+    Admin Paneline Dön
+</a>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">📋 Randevu Onay Paneli</h2>
+
+    <div class="mb-3 text-center">
+        <a asp-action="Index" asp-route-filter="Beklemede" class="btn @(ViewBag.Filter == "Beklemede" ? "btn-primary" : "btn-outline-primary") me-1">Beklemede</a>
+        <a asp-action="Index" asp-route-filter="Onaylandi" class="btn @(ViewBag.Filter == "Onaylandi" ? "btn-success" : "btn-outline-success") me-1">Onaylandı</a>
+        <a asp-action="Index" asp-route-filter="Iptal" class="btn @(ViewBag.Filter == "Iptal" ? "btn-danger" : "btn-outline-danger") me-1">İptal</a>
+        <a asp-action="Index" asp-route-filter="Hepsi" class="btn @(ViewBag.Filter == "Hepsi" ? "btn-dark" : "btn-outline-dark")">Hepsi</a>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info text-center">
+            Görüntülenecek randevu bulunmamaktadır.
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-hover align-middle text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Üye</th>
+                        <th>Telefon</th>
+                        <th>Hizmet</th>
+                        <th>Antrenör</th>
+                        <th>Başlangıç</th>
+                        <th>Bitiş</th>
+                        <th>Durum</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var r in Model)
+                    {
+                        <tr>
+                            <td>@r.Uye.Ad @r.Uye.Soyad</td>
+                            <td>@r.Uye.Telefon</td>
+                            <td>@r.Hizmet.Ad</td>
+                            <td>@r.Antrenor.AdSoyad</td>
+                            <td>@r.BaslangicZamani.ToString("dd.MM.yyyy HH:mm")</td>
+                            <td>@r.BitisZamani.ToString("dd.MM.yyyy HH:mm")</td>
+                            <td>
+                                @switch (r.Durum)
+                                {
+                                    case "Beklemede":
+                                        <span class="badge bg-warning text-dark">Beklemede</span>
+                                        ;
+                                        break;
+                                    case "Onaylandi":
+                                        <span class="badge bg-success">Onaylandı</span>
+                                        ;
+                                        break;
+                                    case "Iptal":
+                                        <span class="badge bg-danger">İptal</span>
+                                        ;
+                                        break;
+                                }
+                            </td>
+                            <td>
+                                @if (r.Durum == "Beklemede")
+                                {
+                                    <a asp-action="Onayla" asp-route-id="@r.Id" class="btn btn-sm btn-success me-1">✅ Onayla</a>
+                                    <a asp-action="IptalEt" asp-route-id="@r.Id" class="btn btn-sm btn-danger">❌ İptal</a>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">İşlem yapılamaz</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

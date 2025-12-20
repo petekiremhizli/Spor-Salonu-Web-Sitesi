@@ -1,59 +1,153 @@
 ﻿@model FitnessCenterProject.Models.Randevu
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Randevu Düzenle";
 }
 
-<h1>Edit</h1>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">✏️ Randevu Düzenle</h2>
 
-<h4>Randevu</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="UyeId" class="control-label"></label>
-                <select asp-for="UyeId" class="form-control" asp-items="ViewBag.UyeId"></select>
-                <span asp-validation-for="UyeId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AntrenorId" class="control-label"></label>
-                <select asp-for="AntrenorId" class="form-control" asp-items="ViewBag.AntrenorId"></select>
-                <span asp-validation-for="AntrenorId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="HizmetId" class="control-label"></label>
-                <select asp-for="HizmetId" class="form-control" asp-items="ViewBag.HizmetId"></select>
-                <span asp-validation-for="HizmetId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BaslangicZamani" class="control-label"></label>
-                <input asp-for="BaslangicZamani" class="form-control" />
-                <span asp-validation-for="BaslangicZamani" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BitisZamani" class="control-label"></label>
-                <input asp-for="BitisZamani" class="form-control" />
-                <span asp-validation-for="BitisZamani" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Durum" class="control-label"></label>
-                <input asp-for="Durum" class="form-control" />
-                <span asp-validation-for="Durum" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Edit" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <!-- HİZMET -->
+                <div class="mb-3">
+                    <label>Hizmet</label>
+                    <select asp-for="HizmetId" class="form-select" id="hizmetSelect" asp-items="ViewBag.Hizmetler">
+                        <option value="">-- Hizmet Seçiniz --</option>
+                    </select>
+                    <span asp-validation-for="HizmetId" class="text-danger"></span>
+                </div>
+
+                <!-- ANTRENÖR -->
+                <div class="mb-3">
+                    <label>Antrenör</label>
+                    <select asp-for="AntrenorId" class="form-select" id="antrenorSelect">
+                        <option value="">-- Önce Hizmet Seçiniz --</option>
+                        @* AJAX ile dolacak *@
+                    </select>
+                    <span asp-validation-for="AntrenorId" class="text-danger"></span>
+                </div>
+
+                <!-- GÜN -->
+                <div class="mb-3">
+                    <label>Müsait Gün</label>
+                    <select class="form-select" id="gunSelect">
+                        <option value="">-- Gün Seçiniz --</option>
+                    </select>
+                </div>
+
+                <!-- SAAT -->
+                <div class="mb-3">
+                    <label>Saat</label>
+                    <select class="form-select" id="saatSelect">
+                        <option value="">-- Saat Seçiniz --</option>
+                    </select>
+                </div>
+
+                <input type="hidden" asp-for="BaslangicZamani" id="baslangicZamaniInput" />
+
+                <button type="submit" class="btn btn-warning w-100">💾 Kaydet</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="text-center mt-3">
+        <a asp-action="Index" class="btn btn-secondary">⬅️ Geri</a>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        // Başlangıçta seçili değerleri doldur
+        var mevcutHizmetId = '@Model.HizmetId';
+        var mevcutAntrenorId = '@Model.AntrenorId';
+        var mevcutBaslangicZamani = '@Model.BaslangicZamani.ToString("yyyy-MM-ddTHH:mm")';
+
+        $('#baslangicZamaniInput').val(mevcutBaslangicZamani);
+
+        // Hizmet -> Antrenör
+        function loadAntrenorler(hizmetId, selectedAntrenorId = null) {
+            $('#antrenorSelect').empty().append('<option value="">-- Antrenör Seçiniz --</option>');
+            if (hizmetId) {
+                $.get('/Randevu/GetAntrenorlerByHizmet', { hizmetId: hizmetId }, function (data) {
+                    data.forEach(a => {
+                        let selected = (a.id == selectedAntrenorId) ? 'selected' : '';
+                        $('#antrenorSelect').append(`<option value="${a.id}" ${selected}>${a.adSoyad}</option>`);
+                    });
+
+                    if (selectedAntrenorId) $('#antrenorSelect').trigger('change');
+                });
+            }
+        }
+
+        $('#hizmetSelect').val(mevcutHizmetId);
+        loadAntrenorler(mevcutHizmetId, mevcutAntrenorId);
+
+        $('#hizmetSelect').change(function () {
+            let hizmetId = $(this).val();
+            loadAntrenorler(hizmetId);
+            $('#gunSelect').empty().append('<option value="">-- Gün Seçiniz --</option>');
+            $('#saatSelect').empty().append('<option value="">-- Saat Seçiniz --</option>');
+        });
+
+        // Antrenör -> Günler
+        $('#antrenorSelect').change(function () {
+            let antrenorId = $(this).val();
+            $('#gunSelect').empty().append('<option value="">-- Gün Seçiniz --</option>');
+            $('#saatSelect').empty().append('<option value="">-- Saat Seçiniz --</option>');
+
+            if (antrenorId) {
+                $.get('/Randevu/GetMusaitGunler', { antrenorId: antrenorId }, function (data) {
+                    data.forEach(gun => {
+                        let tarih = gun.split('T')[0];
+                        $('#gunSelect').append(`<option value="${tarih}">${tarih}</option>`);
+                    });
+
+                    // Mevcut tarih varsa seç
+                    var mevcutGun = mevcutBaslangicZamani.split('T')[0];
+                    $('#gunSelect').val(mevcutGun).trigger('change');
+                });
+            }
+        });
+
+        // Gün -> Saatler
+        $('#gunSelect').change(function () {
+            let gun = $('#gunSelect').val();
+            let antrenorId = $('#antrenorSelect').val();
+            let hizmetId = $('#hizmetSelect').val();
+
+            $('#saatSelect').empty().append('<option>Yükleniyor...</option>');
+
+            if (gun && antrenorId && hizmetId) {
+                $.get('/Randevu/GetMusaitSaatler', {
+                    antrenorId: antrenorId,
+                    tarih: gun,
+                    hizmetId: hizmetId
+                }, function (data) {
+                    $('#saatSelect').empty().append('<option value="">-- Saat Seçiniz --</option>');
+                    if (data.length === 0) {
+                        $('#saatSelect').append('<option disabled>Uygun saat yok</option>');
+                    }
+                    data.forEach(saat => {
+                        let selected = (mevcutBaslangicZamani.includes(saat)) ? 'selected' : '';
+                        $('#saatSelect').append(`<option value="${saat}" ${selected}>${saat}</option>`);
+                    });
+                });
+            }
+        });
+
+        // Saat -> BaslangicZamani
+        $('#saatSelect').change(function () {
+            let gun = $('#gunSelect').val();
+            let saat = $(this).val();
+            if (gun && saat) {
+                $('#baslangicZamaniInput').val(gun + 'T' + saat);
+            }
+        });
+    </script>
 }

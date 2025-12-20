@@ -291,3 +291,6 @@ C:\Users\petek\OneDrive\Desktop\Spor-Salonu-Web-Sitesi\FitnessCenterProject\Fitn
 C:\Users\petek\OneDrive\Desktop\Spor-Salonu-Web-Sitesi\FitnessCenterProject\FitnessCenterProject\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\petek\OneDrive\Desktop\Spor-Salonu-Web-Sitesi\FitnessCenterProject\FitnessCenterProject\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\petek\OneDrive\Desktop\Spor-Salonu-Web-Sitesi\FitnessCenterProject\FitnessCenterProject\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\petek\OneDrive\Desktop\Spor-Salonu-Web-Sitesi\FitnessCenterProject\FitnessCenterProject\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+C:\Users\petek\OneDrive\Desktop\Spor-Salonu-Web-Sitesi\FitnessCenterProject\FitnessCenterProject\bin\Debug\net8.0\OpenAI.dll
+C:\Users\petek\OneDrive\Desktop\Spor-Salonu-Web-Sitesi\FitnessCenterProject\FitnessCenterProject\bin\Debug\net8.0\System.Net.ServerSentEvents.dll

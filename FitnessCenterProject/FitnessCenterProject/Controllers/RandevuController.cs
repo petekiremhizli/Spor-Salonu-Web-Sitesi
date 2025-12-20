@@ -1,35 +1,33 @@
 ﻿using FitnessCenterProject.Data;
 using FitnessCenterProject.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace FitnessCenterProject.Controllers
 {
-    [Authorize(Roles = "Uye,Admin")]
-    
+    [Authorize(Roles = "Uye")]
     public class RandevuController : Controller
     {
         private readonly AppDbContext _context;
-        private readonly UserManager<Uye> _userManager;
 
-        public RandevuController(AppDbContext context, UserManager<Uye> userManager)
+        public RandevuController(AppDbContext context)
         {
             _context = context;
-            _userManager = userManager;
         }
 
-        // ================== INDEX ==================
-        // Üyenin kendi randevuları
+        // =========================
+        // INDEX
+        // =========================
         public IActionResult Index()
         {
-            var uyeId = _userManager.GetUserId(User);
+            var uyeId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             var randevular = _context.Randevular
-                .Include(r => r.Hizmet)
                 .Include(r => r.Antrenor)
+                .Include(r => r.Hizmet)
                 .Where(r => r.UyeId == uyeId)
                 .OrderByDescending(r => r.BaslangicZamani)
                 .ToList();
@@ -37,147 +35,207 @@ namespace FitnessCenterProject.Controllers
             return View(randevular);
         }
 
-        // ================== CREATE (GET) ==================
+        // =========================
+        // DETAILS
+        // =========================
+        public IActionResult Details(int id)
+        {
+            var randevu = _context.Randevular
+                .Include(r => r.Antrenor)
+                .Include(r => r.Hizmet)
+                .FirstOrDefault(r => r.Id == id);
+
+            if (randevu == null) return NotFound();
+            return View(randevu);
+        }
+
+        // =========================
+        // CREATE - GET
+        // =========================
         public IActionResult Create()
         {
-            ViewBag.Hizmetler = _context.Hizmetler.ToList();
-            ViewBag.Antrenorler = new List<Antrenor>(); // boş başlasın
-
+            ViewBag.Hizmetler = new SelectList(_context.Hizmetler, "Id", "Ad");
+            ViewBag.Antrenorler = new SelectList(new List<Antrenor>(), "Id", "AdSoyad");
             return View();
         }
-        [HttpGet]
-        public IActionResult GetAntrenorlerByHizmet(int hizmetId)
-        {
-            var antrenorler = _context.AntrenorHizmetler
-                .Where(x => x.HizmetId == hizmetId)
-                .Select(x => new
-                {
-                    x.Antrenor.Id,
-                    x.Antrenor.AdSoyad
-                })
-                .Distinct()
-                .ToList();
 
-            return Json(antrenorler);
-        }
-
-
-        // ================== CREATE (POST) ==================
+        // =========================
+        // CREATE - POST
+        // =========================
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Randevu randevu)
+        public IActionResult Create(Randevu model)
         {
-            // 🔥 FORMDA OLMAYAN ALANLARI VALIDATION'DAN ÇIKAR
-            ModelState.Remove("UyeId");
-            ModelState.Remove("Durum");
-            ModelState.Remove("Uye");
-            ModelState.Remove("Antrenor");
-            ModelState.Remove("Hizmet");
+            model.UyeId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            model.Durum = "Beklemede";
+
+            var hizmet = _context.Hizmetler.FirstOrDefault(h => h.Id == model.HizmetId);
+            if (hizmet != null)
+                model.BitisZamani = model.BaslangicZamani.AddMinutes(hizmet.Sure);
 
             if (!ModelState.IsValid)
             {
-                ViewBag.Hizmetler = _context.Hizmetler.ToList();
-                return View(randevu);
+                ViewBag.Hizmetler = new SelectList(_context.Hizmetler, "Id", "Ad");
+                ViewBag.Antrenorler = new SelectList(new List<Antrenor>(), "Id", "AdSoyad");
+                return View(model);
             }
 
-            // ✅ BACKEND SET
-            randevu.UyeId = _userManager.GetUserId(User);
-            randevu.Durum = "Beklemede";
-
-            var hizmet = _context.Hizmetler.Find(randevu.HizmetId);
-            randevu.BitisZamani =
-                randevu.BaslangicZamani.AddMinutes(hizmet.Sure);
-
-            _context.Randevular.Add(randevu);
+            _context.Randevular.Add(model);
             _context.SaveChanges();
 
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
 
-
-
-        // ================== EDIT (GET) ==================
+        // =========================
+        // EDIT - GET
+        // =========================
         public IActionResult Edit(int id)
         {
-            var uyeId = _userManager.GetUserId(User);
+            var randevu = _context.Randevular.Find(id);
+            if (randevu == null) return NotFound();
 
-            var randevu = _context.Randevular
-                .FirstOrDefault(r => r.Id == id && r.UyeId == uyeId);
-
-            if (randevu == null)
-                return NotFound();
-
+            // Tüm hizmetleri gönder
             ViewBag.Hizmetler = new SelectList(_context.Hizmetler, "Id", "Ad", randevu.HizmetId);
-            ViewBag.Antrenorler = new SelectList(_context.Antrenorler, "Id", "AdSoyad", randevu.AntrenorId);
+
+            // Mevcut hizmete uygun antrenörleri gönder
+            ViewBag.Antrenorler = new SelectList(
+                _context.Antrenorler.Where(a => a.AntrenorHizmetler.Any(h => h.HizmetId == randevu.HizmetId)).ToList(),
+                "Id", "AdSoyad", randevu.AntrenorId);
 
             return View(randevu);
         }
 
-        // ================== EDIT (POST) ==================
+
+        // =========================
+        // EDIT - POST
+        // =========================
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Randevu randevu)
+        public IActionResult Edit(Randevu model)
         {
-            var uyeId = _userManager.GetUserId(User);
+            var randevu = _context.Randevular.Find(model.Id);
+            if (randevu == null) return NotFound();
 
-            if (randevu.UyeId != uyeId)
-                return Unauthorized();
+            randevu.HizmetId = model.HizmetId;
+            randevu.AntrenorId = model.AntrenorId;
+            randevu.BaslangicZamani = model.BaslangicZamani;
+
+            var hizmet = _context.Hizmetler.FirstOrDefault(h => h.Id == model.HizmetId);
+            if (hizmet != null)
+                randevu.BitisZamani = model.BaslangicZamani.AddMinutes(hizmet.Sure);
 
             if (!ModelState.IsValid)
             {
                 ViewBag.Hizmetler = new SelectList(_context.Hizmetler, "Id", "Ad", randevu.HizmetId);
-                ViewBag.Antrenorler = new SelectList(_context.Antrenorler, "Id", "AdSoyad", randevu.AntrenorId);
-                return View(randevu);
-            }
-
-            var hizmet = _context.Hizmetler.Find(randevu.HizmetId);
-            if (hizmet != null)
-            {
-                randevu.BitisZamani = randevu.BaslangicZamani.AddMinutes(hizmet.Sure);
+                ViewBag.Antrenorler = new SelectList(
+                    _context.Antrenorler.Where(a => a.AntrenorHizmetler.Any(h => h.HizmetId == randevu.HizmetId)).ToList(),
+                    "Id", "AdSoyad", randevu.AntrenorId);
+                return View(model);
             }
 
             _context.Randevular.Update(randevu);
             _context.SaveChanges();
 
-            TempData["Success"] = "Randevu güncellendi.";
-
             return RedirectToAction(nameof(Index));
         }
 
-        // ================== DELETE ==================
+        // =========================
+        // DELETE - GET
+        // =========================
         public IActionResult Delete(int id)
         {
-            var uyeId = _userManager.GetUserId(User);
-
             var randevu = _context.Randevular
-                .Include(r => r.Hizmet)
                 .Include(r => r.Antrenor)
-                .FirstOrDefault(r => r.Id == id && r.UyeId == uyeId);
+                .Include(r => r.Hizmet)
+                .FirstOrDefault(r => r.Id == id);
 
-            if (randevu == null)
-                return NotFound();
-
+            if (randevu == null) return NotFound();
             return View(randevu);
         }
 
+        // =========================
+        // DELETE - POST
+        // =========================
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            var uyeId = _userManager.GetUserId(User);
-
-            var randevu = _context.Randevular
-                .FirstOrDefault(r => r.Id == id && r.UyeId == uyeId);
-
-            if (randevu == null)
-                return NotFound();
+            var randevu = _context.Randevular.Find(id);
+            if (randevu == null) return NotFound();
 
             _context.Randevular.Remove(randevu);
             _context.SaveChanges();
 
-            TempData["Success"] = "Randevu silindi.";
-
             return RedirectToAction(nameof(Index));
+        }
+
+        // =========================
+        // AJAX: Antrenörleri Getir
+        // =========================
+        [HttpGet]
+        public IActionResult GetAntrenorlerByHizmet(int hizmetId)
+        {
+            var antrenorler = _context.Antrenorler
+                .Where(a => a.AntrenorHizmetler.Any(h => h.HizmetId == hizmetId))
+                .Select(a => new { id = a.Id, adSoyad = a.AdSoyad })
+                .ToList();
+
+            return Json(antrenorler);
+        }
+
+        // =========================
+        // AJAX: Müsait Günler
+        // =========================
+        [HttpGet]
+        public IActionResult GetMusaitGunler(int antrenorId)
+        {
+            var gunler = _context.Musaitlikler
+                .Where(m => m.AntrenorId == antrenorId)
+                .Select(m => m.Tarih)
+                .Distinct()
+                .ToList();
+
+            return Json(gunler);
+        }
+
+        // =========================
+        // AJAX: Müsait Saatler
+        // =========================
+        [HttpGet]
+        public IActionResult GetMusaitSaatler(int antrenorId, DateTime tarih, int hizmetId)
+        {
+            var hizmet = _context.Hizmetler.FirstOrDefault(h => h.Id == hizmetId);
+            if (hizmet == null) return Json(new List<string>());
+
+            var musaitlikler = _context.Musaitlikler
+                .Where(m => m.AntrenorId == antrenorId && m.Tarih == tarih)
+                .ToList();
+
+            var doluRandevular = _context.Randevular
+                .Where(r => r.AntrenorId == antrenorId &&
+                            r.Durum != "Iptal" &&
+                            r.BaslangicZamani.Date == tarih)
+                .ToList();
+
+            var saatler = new List<string>();
+            foreach (var m in musaitlikler)
+            {
+                DateTime zaman = tarih.Date + m.BaslangicSaati;
+                while (zaman.TimeOfDay.Add(TimeSpan.FromMinutes(hizmet.Sure)) <= m.BitisSaati)
+                {
+                    bool dolu = doluRandevular.Any(r =>
+                        zaman < r.BitisZamani &&
+                        zaman.AddMinutes(hizmet.Sure) > r.BaslangicZamani
+                    );
+
+                    if (!dolu)
+                        saatler.Add(zaman.ToString("HH:mm"));
+
+                    zaman = zaman.AddMinutes(15);
+                }
+            }
+
+            return Json(saatler);
         }
     }
 }

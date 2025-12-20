@@ -97,8 +97,8 @@ namespace FitnessCenterProject.Migrations
                     b.Property<TimeSpan>("BitisSaati")
                         .HasColumnType("time");
 
-                    b.Property<int>("Gun")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("Tarih")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 

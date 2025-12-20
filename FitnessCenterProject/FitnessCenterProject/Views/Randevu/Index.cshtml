@@ -8,7 +8,7 @@
 
     <h2 class="text-center mb-4">📅 Randevularım</h2>
 
-    @* ✅ Başarı Mesajı *@
+    <!-- Başarı Mesajı -->
     @if (TempData["Success"] != null)
     {
         <div class="alert alert-success text-center">
@@ -16,7 +16,7 @@
         </div>
     }
 
-    @* ❌ Hata Mesajı *@
+    <!-- Hata Mesajı -->
     @if (TempData["Error"] != null)
     {
         <div class="alert alert-danger text-center">
@@ -24,99 +24,91 @@
         </div>
     }
 
-    <div class="card shadow">
+    <div class="card shadow-sm">
         <div class="card-body">
 
             @if (!Model.Any())
             {
-                <div class="alert alert-info text-center">
+                <div class="alert alert-info text-center mb-0">
                     Henüz randevunuz bulunmamaktadır.
                 </div>
             }
             else
             {
-                <table class="table table-hover align-middle">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>Hizmet</th>
-                            <th>Antrenör</th>
-                            <th>Başlangıç</th>
-                            <th>Bitiş</th>
-                            <th>Durum</th>
-                            <th class="text-center">İşlemler</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var r in Model)
-                        {
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle text-center">
+                        <thead class="table-dark">
                             <tr>
-                                <td>
-                                    <strong>@r.Hizmet.Ad</strong>
-                                </td>
-                                <td>
-                                    @r.Antrenor.AdSoyad
-                                </td>
-                                <td>
-                                    @r.BaslangicZamani.ToString("dd.MM.yyyy HH:mm")
-                                </td>
-                                <td>
-                                    @r.BitisZamani.ToString("dd.MM.yyyy HH:mm")
-                                </td>
-                                <td>
-                                    @if (r.Durum == "Beklemede")
-                                    {
-                                        <span class="badge bg-warning text-dark">
-                                            Beklemede
-                                        </span>
-                                    }
-                                    else if (r.Durum == "Onaylandi")
-                                    {
-                                        <span class="badge bg-success">
-                                            Onaylandı
-                                        </span>
-                                    }
-                                    else
-                                    {
-                                        <span class="badge bg-danger">
-                                            İptal
-                                        </span>
-                                    }
-                                </td>
-                                <td class="text-center">
-                                    @if (r.BaslangicZamani > DateTime.Now)
-                                    {
-                                        <a asp-action="Edit"
-                                           asp-route-id="@r.Id"
-                                           class="btn btn-sm btn-warning me-1">
-                                            Düzenle
-                                        </a>
-
-                                        <a asp-action="Delete"
-                                           asp-route-id="@r.Id"
-                                           class="btn btn-sm btn-danger">
-                                            Sil
-                                        </a>
-                                    }
-                                    else
-                                    {
-                                        <span class="text-muted">
-                                            İşlem yapılamaz
-                                        </span>
-                                    }
-                                </td>
+                                <th>Hizmet</th>
+                                <th>Antrenör</th>
+                                <th>Başlangıç</th>
+                                <th>Bitiş</th>
+                                <th>Durum</th>
+                                <th>İşlemler</th>
                             </tr>
-                        }
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach (var r in Model)
+                            {
+                                <tr>
+                                    <td><strong>@r.Hizmet.Ad</strong></td>
+                                    <td>@r.Antrenor.AdSoyad</td>
+                                    <td>@r.BaslangicZamani.ToString("dd.MM.yyyy HH:mm")</td>
+                                    <td>@r.BitisZamani.ToString("dd.MM.yyyy HH:mm")</td>
+                                    <td>
+                                        @switch (r.Durum)
+                                        {
+                                            case "Beklemede":
+                                                <span class="badge bg-warning text-dark">Beklemede</span>
+                                                break;
+                                            case "Onaylandi":
+                                                <span class="badge bg-success">Onaylandı</span>
+                                                break;
+                                            case "Iptal":
+                                                <span class="badge bg-danger">İptal</span>
+                                                break;
+                                            default:
+                                                <span class="badge bg-secondary">@r.Durum</span>
+                                                break;
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (r.BaslangicZamani > DateTime.Now)
+                                        {
+                                            <a asp-action="Details" asp-route-id="@r.Id" class="btn btn-sm btn-info me-1" title="Detay">
+                                                <i class="bi bi-eye"></i>
+                                            </a>
+                                            <a asp-action="Edit" asp-route-id="@r.Id" class="btn btn-sm btn-warning me-1" title="Düzenle">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a>
+                                            <a asp-action="Delete" asp-route-id="@r.Id" class="btn btn-sm btn-danger" title="Sil">
+                                                <i class="bi bi-trash"></i>
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">İşlem yapılamaz</span>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
             }
 
         </div>
     </div>
 
     <div class="text-center mt-4">
-        <a asp asp-controller="Randevu" asp-action="Create" class="btn btn-primary btn-lg">
+        <a asp-controller="Randevu" asp-action="Create" class="btn btn-primary btn-lg">
             ➕ Yeni Randevu Al
         </a>
     </div>
 
 </div>
+
+@section Scripts {
+    <!-- Bootstrap Icons kullanıyorsan ekle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
+}

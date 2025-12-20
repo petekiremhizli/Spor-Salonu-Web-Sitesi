@@ -28,7 +28,7 @@ namespace FitnessCenterProject.Controllers
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult Iletisim()
         {
             return View();
         }

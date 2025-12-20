@@ -1,65 +1,53 @@
 ﻿@{
-    ViewData["Title"] = "Diyet & AI Önerisi";
+    ViewData["Title"] = "Diyet Önerisi";
 }
 
-<div class="container mt-5">
+<div class="container py-5">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
 
-            <div class="card shadow-lg border-0 rounded-4">
-                <div class="card-body p-5">
+            <div class="card shadow-lg">
+                <div class="card-header bg-success text-white text-center">
+                    <h3 class="mb-0">Diyet Önerisi Al</h3>
+                </div>
+                <div class="card-body">
 
-                    <h2 class="text-center fw-bold mb-3">
-                        🥗 Yapay Zekâ Destekli Diyet Önerisi
-                    </h2>
-
-                    <p class="text-center text-muted mb-4">
-                        Fiziksel bilgilerinize göre size özel diyet ve beslenme önerileri oluşturulur.
-                    </p>
-
-                    <form asp-action="Oneri" method="post">
-
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <input type="number" name="boy" class="form-control form-control-lg"
-                                       placeholder="Boy (cm)" required />
-                            </div>
-
-                            <div class="col-md-6">
-                                <input type="number" name="kilo" class="form-control form-control-lg"
-                                       placeholder="Kilo (kg)" required />
-                            </div>
-
-                            <div class="col-md-6">
-                                <input type="number" name="yas" class="form-control form-control-lg"
-                                       placeholder="Yaş" required />
-                            </div>
-
-                            <div class="col-md-6">
-                                <select name="cinsiyet" class="form-select form-select-lg" required>
-                                    <option value="">Cinsiyet</option>
-                                    <option value="Erkek">Erkek</option>
-                                    <option value="Kadın">Kadın</option>
-                                </select>
-                            </div>
-
-                            <div class="col-12">
-                                <select name="hedef" class="form-select form-select-lg" required>
-                                    <option value="">Hedefiniz</option>
-                                    <option value="Kilo Vermek">Kilo Vermek</option>
-                                    <option value="Kilo Almak">Kilo Almak</option>
-                                    <option value="Kilo Korumak">Kiloyu Korumak</option>
-                                </select>
-                            </div>
+                    <form asp-action="Index" method="post">
+                        <div class="mb-3">
+                            <label for="yas" class="form-label">Yaş</label>
+                            <input type="number" class="form-control" id="yas" name="yas" placeholder="Yaşınızı girin" required />
                         </div>
 
-                        <div class="d-grid mt-4">
-                            <button type="submit" class="btn btn-dark btn-lg rounded-3">
-                                🤖 Diyet Önerisi Al
-                            </button>
+                        <div class="mb-3">
+                            <label for="boy" class="form-label">Boy (cm)</label>
+                            <input type="number" class="form-control" id="boy" name="boy" placeholder="Boyunuzu girin" required />
                         </div>
 
+                        <div class="mb-3">
+                            <label for="kilo" class="form-label">Kilo (kg)</label>
+                            <input type="number" class="form-control" id="kilo" name="kilo" placeholder="Kilonuzu girin" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="hedef" class="form-label">Hedef</label>
+                            <select class="form-select" id="hedef" name="hedef" required>
+                                <option value="">Seçiniz</option>
+                                <option value="kiloAlma">Kilo Alma</option>
+                                <option value="kiloVerme">Kilo Verme</option>
+                                <option value="kiloSabit">Kilo Sabit Tutma</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">Diyet Öner</button>
                     </form>
+
+                    @if (ViewBag.Sonuc != null)
+                    {
+                        <div class="mt-4 p-3 border rounded bg-light">
+                            <h5 class="mb-2">Önerilen Diyet:</h5>
+                            <pre class="mb-0">@ViewBag.Sonuc</pre>
+                        </div>
+                    }
 
                 </div>
             </div>

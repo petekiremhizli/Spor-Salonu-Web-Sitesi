@@ -6,28 +6,38 @@
     <!-- HİZMET -->
     <div class="mb-3">
         <label>Hizmet</label>
-        <select asp-for="HizmetId" class="form-select" id="hizmetSelect">
+        <select asp-for="HizmetId" class="form-select" id="hizmetSelect" asp-items="ViewBag.Hizmetler">
             <option value="">-- Hizmet Seçiniz --</option>
-            @foreach (var h in ViewBag.Hizmetler)
-            {
-                <option value="@h.Id">@h.Ad</option>
-            }
         </select>
+        <span asp-validation-for="HizmetId" class="text-danger"></span>
     </div>
 
-    <!-- ANTRENÖR -->
+    <!-- ANTRENÖR (AJAX ile doldurulacak) -->
     <div class="mb-3">
         <label>Antrenör</label>
         <select asp-for="AntrenorId" class="form-select" id="antrenorSelect">
             <option value="">-- Önce Hizmet Seçiniz --</option>
         </select>
+        <span asp-validation-for="AntrenorId" class="text-danger"></span>
     </div>
 
-    <!-- TARİH -->
+    <!-- GÜN -->
     <div class="mb-3">
-        <label>Başlangıç Zamanı</label>
-        <input asp-for="BaslangicZamani" type="datetime-local" class="form-control" />
+        <label>Müsait Gün</label>
+        <select class="form-select" id="gunSelect">
+            <option value="">-- Gün Seçiniz --</option>
+        </select>
     </div>
+
+    <!-- SAAT -->
+    <div class="mb-3">
+        <label>Saat</label>
+        <select class="form-select" id="saatSelect">
+            <option value="">-- Saat Seçiniz --</option>
+        </select>
+    </div>
+
+    <input type="hidden" asp-for="BaslangicZamani" id="baslangicZamaniInput" />
 
     <button class="btn btn-success w-100">Randevu Al</button>
 </form>
@@ -36,21 +46,73 @@
     <partial name="_ValidationScriptsPartial" />
 
     <script>
+        // HİZMET → ANTRENÖR
         $('#hizmetSelect').change(function () {
-            var hizmetId = $(this).val();
-            $('#antrenorSelect').empty();
+            let hizmetId = $(this).val();
+
+            $('#antrenorSelect').empty().append('<option value="">-- Antrenör Seçiniz --</option>');
+            $('#gunSelect').empty().append('<option value="">-- Gün Seçiniz --</option>');
+            $('#saatSelect').empty().append('<option value="">-- Saat Seçiniz --</option>');
 
             if (hizmetId) {
-                $.get('/Randevu/GetAntrenorlerByHizmet',
-                    { hizmetId: hizmetId },
-                    function (data) {
-                        $('#antrenorSelect').append('<option value="">-- Seçiniz --</option>');
-                        $.each(data, function (i, item) {
-                            $('#antrenorSelect').append(
-                                `<option value="${item.id}">${item.adSoyad}</option>`
-                            );
-                        });
+                $.get('/Randevu/GetAntrenorlerByHizmet', { hizmetId: hizmetId }, function (data) {
+                    data.forEach(a => {
+                        $('#antrenorSelect').append(`<option value="${a.id}">${a.adSoyad}</option>`);
                     });
+                });
+            }
+        });
+
+        // ANTRENÖR → GÜNLER
+        $('#antrenorSelect').change(function () {
+            let antrenorId = $(this).val();
+            $('#gunSelect').empty().append('<option value="">-- Gün Seçiniz --</option>');
+            $('#saatSelect').empty().append('<option value="">-- Saat Seçiniz --</option>');
+
+            if (antrenorId) {
+                $.get('/Randevu/GetMusaitGunler', { antrenorId: antrenorId }, function (data) {
+                    data.forEach(gun => {
+                        let tarih = gun.split('T')[0];
+                        $('#gunSelect').append(`<option value="${tarih}">${tarih}</option>`);
+                    });
+                });
+            }
+        });
+
+        // GÜN → SAATLER
+        $('#gunSelect').change(function () {
+            let gun = $(this).val();
+            let antrenorId = $('#antrenorSelect').val();
+            let hizmetId = $('#hizmetSelect').val();
+
+            $('#saatSelect').empty().append('<option>Yükleniyor...</option>');
+
+            if (gun && antrenorId && hizmetId) {
+                $.get('/Randevu/GetMusaitSaatler', {
+                    antrenorId: antrenorId,
+                    tarih: gun,
+                    hizmetId: hizmetId
+                }, function (data) {
+                    $('#saatSelect').empty().append('<option value="">-- Saat Seçiniz --</option>');
+
+                    if (data.length === 0) {
+                        $('#saatSelect').append('<option disabled>Uygun saat yok</option>');
+                    }
+
+                    data.forEach(saat => {
+                        $('#saatSelect').append(`<option value="${saat}">${saat}</option>`);
+                    });
+                });
+            }
+        });
+
+        // SAAT → BASLANGICZAMANI
+        $('#saatSelect').change(function () {
+            let gun = $('#gunSelect').val();
+            let saat = $(this).val();
+
+            if (gun && saat) {
+                $('#baslangicZamaniInput').val(gun + 'T' + saat);
             }
         });
     </script>

@@ -1,32 +1,47 @@
 ﻿using FitnessCenterProject.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
-public class DiyetController : Controller
+namespace FitnessCenterProject.Controllers
 {
-    private readonly GoogleAiService _aiService;
-
-    public DiyetController(GoogleAiService aiService)
+    public class DiyetController : Controller
     {
-        _aiService = aiService;
-    }
+        private readonly GeminiService _geminiService;
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+        public DiyetController(GeminiService geminiService)
+        {
+            _geminiService = geminiService;
+        }
 
-    [HttpPost]
-    public async Task<IActionResult> Oneri(
-        int boy,
-        int kilo,
-        int yas,
-        string cinsiyet,
-        string hedef)
-    {
-        var sonuc = await _aiService.DiyetOnerisiAl(
-            boy, kilo, yas, cinsiyet, hedef);
+        // GET: Form sayfası
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-        ViewBag.AIResult = sonuc;
-        return View("Index");
+        // POST: Diyet önerisi al
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Index(int yas, int boy, int kilo, string hedef)
+        {
+            if (boy <= 0 || kilo <= 0 || yas <= 0 || string.IsNullOrEmpty(hedef))
+            {
+                ViewBag.Sonuc = "Lütfen tüm alanları doğru şekilde doldurun.";
+                return View();
+            }
+
+            try
+            {
+                var sonuc = await _geminiService.DiyetOnerisiAl(yas, boy, kilo, hedef);
+                ViewBag.Sonuc = sonuc;
+            }
+            catch (HttpRequestException ex)
+            {
+                ViewBag.Sonuc = $"API hatası: {ex.Message}";
+            }
+
+            return View();
+        }
     }
 }

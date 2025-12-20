@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.ComponentModel.DataAnnotations;
 
 namespace FitnessCenterProject.Models
 {
@@ -7,38 +7,33 @@ namespace FitnessCenterProject.Models
     {
         public int Id { get; set; }
 
-
-        [ForeignKey("Uye")]
-        public string UyeId { get; set; }
-        public Uye Uye { get; set; }
-
-
-        [ForeignKey("Antrenor")]
-
-        public int AntrenorId { get; set; }
-        public Antrenor Antrenor { get; set; }
-
-
-        [ForeignKey("Hizmet")]
-
+        // Formdan gelecek alanlar
+        [Required(ErrorMessage = "Hizmet seçimi zorunludur.")]
         public int HizmetId { get; set; }
-        public Hizmet Hizmet { get; set; }
 
-        [Required(ErrorMessage = "Başlangıç zamanı zorunludur.")]
+        [Required(ErrorMessage = "Antrenör seçimi zorunludur.")]
+        public int AntrenorId { get; set; }
+
+        [Required(ErrorMessage = "Lütfen gün ve saat seçiniz.")]
         public DateTime BaslangicZamani { get; set; }
 
+        public DateTime BitisZamani { get; set; }
 
+        // Backend tarafından atanacak alanlar
+        [BindNever]
+        public string UyeId { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Bitiş zamanı zorunludur.")]
-        public DateTime BitisZamani { get; set; }  // BaslangicZamani + Hizmet.Sure
+        [BindNever]
+        public string Durum { get; set; } = string.Empty;
 
+        // Navigation property'ler (nullable yaptık)
+        [BindNever]
+        public Uye? Uye { get; set; }
 
-        [Required(ErrorMessage = "Durum zorunludur.")]
-        [StringLength(20)]
-        public string Durum { get; set; }         // Beklemede, Onaylandi, Iptal
+        [BindNever]
+        public Antrenor? Antrenor { get; set; }
+
+        [BindNever]
+        public Hizmet? Hizmet { get; set; }
     }
-
-
-
-
 }

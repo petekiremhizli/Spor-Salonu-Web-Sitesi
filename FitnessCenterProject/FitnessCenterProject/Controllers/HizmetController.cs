@@ -16,21 +16,21 @@ namespace FitnessCenterProject.Controllers
             _context = context;
         }
 
-        // ✅ LISTELEME
+        // LISTELEME
         public IActionResult Index()
         {
             var hizmetler = _context.Hizmetler.ToList();
             return View(hizmetler);
         }
 
-        // ✅ CREATE - GET
+        // CREATE - GET
         public IActionResult Create()
         {
 
             return View();
         }
 
-        // ✅ CREATE - POST
+        // CREATE - POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Hizmet hizmet)
@@ -45,7 +45,7 @@ namespace FitnessCenterProject.Controllers
             return View(hizmet);
         }
 
-        // ✅ DETAILS
+        // DETAILS
         public IActionResult Details(int id)
         {
             var hizmet = _context.Hizmetler.Find(id);
@@ -55,7 +55,7 @@ namespace FitnessCenterProject.Controllers
             return View(hizmet);
         }
 
-        // ✅ UPDATE - GET
+        // UPDATE - GET
         public IActionResult Update(int id)
         {
             var hizmet = _context.Hizmetler.Find(id);
@@ -65,7 +65,7 @@ namespace FitnessCenterProject.Controllers
             return View(hizmet);
         }
 
-        // ✅ UPDATE - POST
+        // UPDATE - POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Update(Hizmet hizmet)
@@ -89,7 +89,7 @@ namespace FitnessCenterProject.Controllers
             if (hizmet == null)
                 return NotFound();
 
-            // ❌ Bu hizmet kullanılıyor mu?
+            //  Bu hizmet kullanılıyor mu?
             if (hizmet.AntrenorHizmetler.Any())
             {
                 TempData["Error"] =
@@ -97,7 +97,7 @@ namespace FitnessCenterProject.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            // ✅ Kullanılmıyorsa onay sayfası
+            // Kullanılmıyorsa onay sayfası
             return View(hizmet);
         }
 

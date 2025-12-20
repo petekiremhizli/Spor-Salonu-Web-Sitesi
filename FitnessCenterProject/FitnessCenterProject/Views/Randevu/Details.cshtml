@@ -1,54 +1,56 @@
 ﻿@model FitnessCenterProject.Models.Randevu
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Randevu Detay";
 }
 
-<h1>Details</h1>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">🔍 Randevu Detay</h2>
 
-<div>
-    <h4>Randevu</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Uye)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Uye.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Antrenor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Antrenor.AdSoyad)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Hizmet)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Hizmet.Ad)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BaslangicZamani)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BaslangicZamani)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BitisZamani)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BitisZamani)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Durum)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Durum)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Hizmet</th>
+                    <td>@Model.Hizmet.Ad</td>
+                </tr>
+                <tr>
+                    <th>Antrenör</th>
+                    <td>@Model.Antrenor.AdSoyad</td>
+                </tr>
+                <tr>
+                    <th>Başlangıç</th>
+                    <td>@Model.BaslangicZamani.ToString("dd.MM.yyyy HH:mm")</td>
+                </tr>
+                <tr>
+                    <th>Bitiş</th>
+                    <td>@Model.BitisZamani.ToString("dd.MM.yyyy HH:mm")</td>
+                </tr>
+                <tr>
+                    <th>Durum</th>
+                    <td>
+                        @switch (Model.Durum)
+                        {
+                            case "Beklemede":
+                                <span class="badge bg-warning text-dark">Beklemede</span>
+                                break;
+                            case "Onaylandi":
+                                <span class="badge bg-success">Onaylandı</span>
+                                break;
+                            case "Iptal":
+                                <span class="badge bg-danger">İptal</span>
+                                break;
+                            default:
+                                <span class="badge bg-secondary">@Model.Durum</span>
+                                break;
+                        }
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="text-center mt-3">
+        <a asp-action="Index" class="btn btn-secondary">⬅️ Geri</a>
+    </div>
 </div>

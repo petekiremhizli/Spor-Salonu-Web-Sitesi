@@ -4,7 +4,12 @@
 
 <form asp-action="Create" method="post">
     <div asp-validation-summary="All" class="text-danger"></div>
-
+    <!-- Geri Butonu -->
+    <a asp-action="Index" class="btn btn-secondary">
+        ⬅️ Geri
+    </a>
+    <br />
+    <br />
     <div class="mb-3">
         <label>Hizmet Adı</label>
         <input asp-for="Ad" class="form-control" />

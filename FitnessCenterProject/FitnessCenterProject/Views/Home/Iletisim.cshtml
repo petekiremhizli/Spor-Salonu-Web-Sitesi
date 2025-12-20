@@ -50,45 +50,6 @@
         margin-bottom: 20px;
     }
 
-    /* Form Tasarımı */
-    .contact-form-container {
-        background: white;
-        border-radius: 25px;
-        padding: 40px;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-    }
-
-    .form-control {
-        border-radius: 10px;
-        padding: 12px 20px;
-        border: 2px solid #f8f9fa;
-        background: #f8f9fa;
-        transition: all 0.3s ease;
-    }
-
-        .form-control:focus {
-            border-color: var(--gym-gold);
-            background: white;
-            box-shadow: none;
-        }
-
-    .btn-send {
-        background: var(--gym-dark);
-        color: white;
-        border-radius: 10px;
-        padding: 15px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        transition: all 0.3s ease;
-        border: none;
-    }
-
-        .btn-send:hover {
-            background: var(--gym-gold);
-            color: var(--gym-dark);
-            transform: scale(1.02);
-        }
-
     /* Harita Alanı */
     .map-container {
         border-radius: 25px;
@@ -98,16 +59,20 @@
     }
 </style>
 
+<!-- Hero Bölümü -->
 <section class="contact-hero">
     <div class="container">
         <h1 class="display-3 fw-bold mb-3">BİZE <span style="color:var(--gym-gold);">ULAŞIN</span></h1>
         <p class="lead opacity-75">Sorularınız, önerileriniz veya üyelik işlemleri için her zaman yanınızdayız.</p>
     </div>
 </section>
+<br />
+<br />
 
 <div class="container" style="position: relative; z-index: 5; margin-bottom: 100px;">
     <div class="row g-4">
 
+        <!-- İLETİŞİM BİLGİLERİ -->
         <div class="col-lg-4">
             <div class="row g-4">
                 <div class="col-12">
@@ -133,72 +98,66 @@
                 </div>
             </div>
         </div>
+        <br />
+        <br />
 
+        <!-- HARİTA VE SOSYAL MEDYA -->
         <div class="col-lg-8">
-            <div class="contact-form-container shadow">
-                <h3 class="fw-bold mb-4">Mesaj Gönderin</h3>
-                <form action="#" method="post">
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label class="form-label small fw-bold text-uppercase">Adınız Soyadınız</label>
-                            <input type="text" class="form-control" placeholder="Örn: Ahmet Yılmaz" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label small fw-bold text-uppercase">E-Posta Adresiniz</label>
-                            <input type="email" class="form-control" placeholder="ahmet@email.com" required>
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label small fw-bold text-uppercase">Konu</label>
-                            <select class="form-select form-control">
-                                <option selected>Üyelik Hakkında</option>
-                                <option>Egzersiz Programları</option>
-                                <option>Yapay Zeka Önerileri</option>
-                                <option>Diğer</option>
-                            </select>
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label small fw-bold text-uppercase">Mesajınız</label>
-                            <textarea class="form-control" rows="5" placeholder="Size nasıl yardımcı olabiliriz?" required></textarea>
-                        </div>
-                        <div class="col-12 mt-4">
-                            <button type="submit" class="btn btn-send w-100 shadow-sm">MESAJI GÖNDER <i class="bi bi-send ms-2"></i></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mt-5 pt-5 align-items-center">
-        <div class="col-lg-7 mb-4 mb-lg-0">
-            <div class="map-container">
+            <div class="map-container mb-4">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.9631430582266!2d28.9950117!3d41.0435165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDAyJzM2LjciTiAyOMKwNTknNDIuMCJF!5e0!3m2!1str!2str!4v1625000000000!5m2!1str!2str"
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
                 </iframe>
             </div>
-        </div>
-        <div class="col-lg-5 ps-lg-5">
+
             <h2 class="fw-bold mb-4">Bizi Sosyal Medyada <span class="text-warning">Takip Edin</span></h2>
             <p class="text-muted mb-4">Güncel duyurular, sağlıklı yaşam ipuçları ve spor salonumuzdan anlık kareler için sosyal medya hesaplarımızı takip edebilirsiniz.</p>
 
-            <div class="d-flex gap-3">
-                <a href="#" class="btn btn-dark rounded-circle d-flex align-items-center justify-content-center shadow" style="width: 50px; height: 50px; transition: 0.3s;">
+            <div class="d-flex gap-3 mb-5">
+                <a href="#" class="btn btn-dark rounded-circle d-flex align-items-center justify-content-center shadow" style="width: 50px; height: 50px;">
                     <i class="bi bi-instagram fs-5"></i>
                 </a>
-                <a href="#" class="btn btn-dark rounded-circle d-flex align-items-center justify-content-center shadow" style="width: 50px; height: 50px; transition: 0.3s;">
+                <a href="#" class="btn btn-dark rounded-circle d-flex align-items-center justify-content-center shadow" style="width: 50px; height: 50px;">
                     <i class="bi bi-facebook fs-5"></i>
                 </a>
-                <a href="#" class="btn btn-dark rounded-circle d-flex align-items-center justify-content-center shadow" style="width: 50px; height: 50px; transition: 0.3s;">
+                <a href="#" class="btn btn-dark rounded-circle d-flex align-items-center justify-content-center shadow" style="width: 50px; height: 50px;">
                     <i class="bi bi-youtube fs-5"></i>
                 </a>
-                <a href="#" class="btn btn-dark rounded-circle d-flex align-items-center justify-content-center shadow" style="width: 50px; height: 50px; transition: 0.3s;">
+                <a href="#" class="btn btn-dark rounded-circle d-flex align-items-center justify-content-center shadow" style="width: 50px; height: 50px;">
                     <i class="bi bi-twitter-x fs-5"></i>
                 </a>
             </div>
 
-            <div class="mt-5 p-4 bg-warning rounded-4 shadow-sm text-dark fw-bold">
+            <div class="p-4 bg-warning rounded-4 shadow-sm text-dark fw-bold">
                 <i class="bi bi-clock-fill me-2"></i> Çalışma saatlerimiz içerisinde anlık destek alabilirsiniz.
             </div>
         </div>
     </div>
+    <br />
+    <!-- ==================== FULL WIDTH CTA ==================== -->
+    <section style="
+    width:100vw;
+    margin-left:calc(50% - 50vw);
+    background: linear-gradient(45deg, #000, #222);
+    padding:120px 20px;
+">
+
+        <div class="text-center text-white">
+
+            <h2 class="fw-bold display-5">
+                Sizin Hikayeniz Ne Zaman Başlıyor?
+            </h2>
+
+            <p class="lead mt-3 text-secondary">
+                GYM CLUB topluluğuna katılarak hayatınızı değiştirmeye başlayın.
+            </p>
+
+            <a href="/Account/SignUp"
+               class="btn btn-warning btn-lg mt-4 px-5 fw-bold rounded-pill shadow">
+                Bize Katılın
+            </a>
+
+        </div>
+
+    </section>
+
 </div>

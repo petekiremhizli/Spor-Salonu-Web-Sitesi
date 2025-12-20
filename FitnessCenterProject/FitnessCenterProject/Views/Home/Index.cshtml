@@ -41,56 +41,7 @@
     </div>
 </div>
 
-<!-- ==================== HİZMETLER BÖLÜMÜ ==================== -->
-<div class="container mt-5">
-    <h4 class="text-center mb-4" style="font-size: 30px; font-weight: bold;">
-        Hizmetlerimiz
-    </h4>
 
-    <p class="text-center mb-5" style="max-width:700px; margin:auto;">
-        GYM CLUB olarak üyelerimizin ihtiyaçlarına uygun birçok hizmet sunuyoruz.
-        Her biri profesyonel eğitmenler tarafından yönlendirilen kaliteli antrenman programlarından yararlanabilirsiniz.
-    </p>
-
-    <div class="row g-4">
-
-        <!-- Fitness -->
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div style="height:200px; background:url('/images/fitness.jpeg') center/cover;"></div>
-                <div class="card-body">
-                    <h4 class="fw-bold">Fitness Antrenmanı</h4>
-                    <p>Ağırlık, güç ve dayanıklılık odaklı profesyonel fitness programları.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Yoga -->
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div style="height:200px; background:url('/images/yoga.jpg') center/cover;"></div>
-                <div class="card-body">
-                    <h4 class="fw-bold">Yoga Dersleri</h4>
-                    <p>Bedensel esneklik, nefes kontrolü ve rahatlama odaklı yoga eğitimi.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pilates -->
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div style="height:200px; background:url('/images/pilates.jpg') center/cover;"></div>
-                <div class="card-body">
-                    <h4 class="fw-bold">Pilates Eğitimleri</h4>
-                    <p>Core güçlendirme, duruş düzeltme ve sıkılaşma odaklı pilates çalışmaları.</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-<br />
-<br />
 <!-- ==================== ÇALIŞMA SAATLERİ (FULL WIDTH HERO STYLE) ==================== -->
 <section style="
     width:100vw;
@@ -152,25 +103,29 @@
     </div>
 </section>
 
-<br />
-<br />
+<!-- ==================== FULL WIDTH CTA ==================== -->
+<section style="
+    width:100vw;
+    margin-left:calc(50% - 50vw);
+    background: linear-gradient(45deg, #000, #222);
+    padding:120px 20px;
+">
 
+    <div class="text-center text-white">
 
-<!-- ==================== YAPAY ZEKA ÖNERİ SİSTEMİ ==================== -->
-<div class="mb-5">
-    <h2 class="text-center mb-4">Yapay Zekâ Destekli Egzersiz Önerisi</h2>
+        <h2 class="fw-bold display-5">
+            Sizin Hikayeniz Ne Zaman Başlıyor?
+        </h2>
 
-    <div class="card p-4 shadow-sm">
-        <h4 class="fw-bold">AI ile Kişisel Egzersiz Planı</h4>
-        <p>
-            Boy, kilo ve vücut tipi bilgilerinize göre yapay zekâ tarafından
-            kişisel egzersiz programı önerileri oluşturulacaktır.
+        <p class="lead mt-3 text-secondary">
+            GYM CLUB topluluğuna katılarak hayatınızı değiştirmeye başlayın.
         </p>
 
-        <a asp-controller="Diyet"
-           asp-action="Index"
-           class="btn btn-dark btn-lg">
-            Diyet & Egzersiz Önerisi Al
+        <a href="/Account/SignUp"
+           class="btn btn-warning btn-lg mt-4 px-5 fw-bold rounded-pill shadow">
+            Bize Katılın
         </a>
+
     </div>
-</div>
+
+</section>

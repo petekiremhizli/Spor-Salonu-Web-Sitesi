@@ -1,0 +1,3 @@
+C:\Users\petek\OneDrive\Desktop\Spor-Salonu-Web-Sitesi\FitnessCenterProject\FitnessCenterProject\wwwroot\images\fitness.jpeg
+C:\Users\petek\OneDrive\Desktop\Spor-Salonu-Web-Sitesi\FitnessCenterProject\FitnessCenterProject\wwwroot\images\pilates.jpg
+C:\Users\petek\OneDrive\Desktop\Spor-Salonu-Web-Sitesi\FitnessCenterProject\FitnessCenterProject\wwwroot\images\yoga.jpg

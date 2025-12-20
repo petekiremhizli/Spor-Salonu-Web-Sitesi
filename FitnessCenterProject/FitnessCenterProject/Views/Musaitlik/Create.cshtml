@@ -1,1 +1,31 @@
-﻿
+﻿@model FitnessCenterProject.Models.Musaitlik
+
+<form asp-action="Create" method="post">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <!-- Geri Butonu -->
+    <a asp-action="Index" class="btn btn-secondary">
+        ⬅️ Geri
+    </a>
+    <br />
+    <br />
+    <!-- Antrenör -->
+    <select asp-for="AntrenorId"
+            asp-items="ViewBag.Antrenorler"
+            class="form-control">
+        <option value="">-- Antrenör Seçiniz --</option>
+    </select>
+
+    <br/>
+    <!-- Tarih -->
+    <input asp-for="Tarih" type="date" class="form-control" />
+     <br/>
+
+    <!-- Başlangıç -->
+    <input asp-for="BaslangicSaati" type="time" class="form-control" />
+    <br/>
+    <!-- Bitiş -->
+    <input asp-for="BitisSaati" type="time" class="form-control" />
+    <br/>
+    <button type="submit" class="btn btn-success mt-3">Kaydet</button>
+</form>

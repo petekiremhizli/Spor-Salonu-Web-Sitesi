@@ -1,5 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using FitnessCenterProject.Models;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace FitnessCenterProject.Models
 {
@@ -8,7 +9,7 @@ namespace FitnessCenterProject.Models
         public int Id { get; set; }
 
         [Required]
-        public DayOfWeek Gun { get; set; }
+        public DateTime Tarih { get; set; }
 
         [Required]
         public TimeSpan BaslangicSaati { get; set; }
@@ -16,13 +17,10 @@ namespace FitnessCenterProject.Models
         [Required]
         public TimeSpan BitisSaati { get; set; }
 
-
-        [ForeignKey("Antrenor")]
+        [Required]
         public int AntrenorId { get; set; }
+
+        [ValidateNever]   // 🔥 ÇOK ÖNEMLİ
         public Antrenor Antrenor { get; set; }
     }
-
-
-
-
 }
