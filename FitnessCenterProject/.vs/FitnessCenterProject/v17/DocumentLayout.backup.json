@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F8E71D30-939C-4FB2-883C-F913A81DEE11}|FitnessCenterProject\\FitnessCenterProject.csproj|c:\\users\\petek\\onedrive\\desktop\\spor-salonu-web-sitesi\\fitnesscenterproject\\fitnesscenterproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8E71D30-939C-4FB2-883C-F913A81DEE11}|FitnessCenterProject\\FitnessCenterProject.csproj|solutionrelative:fitnesscenterproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F8E71D30-939C-4FB2-883C-F913A81DEE11}|FitnessCenterProject\\FitnessCenterProject.csproj|c:\\users\\petek\\onedrive\\desktop\\spor-salonu-web-sitesi\\fitnesscenterproject\\fitnesscenterproject\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F8E71D30-939C-4FB2-883C-F913A81DEE11}|FitnessCenterProject\\FitnessCenterProject.csproj|solutionrelative:fitnesscenterproject\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -171,10 +175,6 @@
       "RelativeMoniker": "D:0:0:{F8E71D30-939C-4FB2-883C-F913A81DEE11}|FitnessCenterProject\\FitnessCenterProject.csproj|solutionrelative:fitnesscenterproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8E71D30-939C-4FB2-883C-F913A81DEE11}|FitnessCenterProject\\FitnessCenterProject.csproj|c:\\users\\petek\\onedrive\\desktop\\spor-salonu-web-sitesi\\fitnesscenterproject\\fitnesscenterproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F8E71D30-939C-4FB2-883C-F913A81DEE11}|FitnessCenterProject\\FitnessCenterProject.csproj|solutionrelative:fitnesscenterproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F8E71D30-939C-4FB2-883C-F913A81DEE11}|FitnessCenterProject\\FitnessCenterProject.csproj|c:\\users\\petek\\onedrive\\desktop\\spor-salonu-web-sitesi\\fitnesscenterproject\\fitnesscenterproject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F8E71D30-939C-4FB2-883C-F913A81DEE11}|FitnessCenterProject\\FitnessCenterProject.csproj|solutionrelative:fitnesscenterproject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -299,18 +299,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "HizmetApiModel.cs",
-              "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\HizmetApiModel.cs",
-              "RelativeDocumentMoniker": "FitnessCenterProject\\Models\\HizmetApiModel.cs",
-              "ToolTip": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\HizmetApiModel.cs",
-              "RelativeToolTip": "FitnessCenterProject\\Models\\HizmetApiModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T20:39:56.044Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Models\\LoginViewModel.cs",
@@ -318,11 +306,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Models\\LoginViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T14:26:25.812Z"
+              "WhenOpened": "2025-12-10T14:26:25.812Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Musaitlik.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\Musaitlik.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Models\\Musaitlik.cs",
@@ -330,11 +319,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Models\\Musaitlik.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-20T08:31:49.409Z"
+              "WhenOpened": "2025-12-20T08:31:49.409Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Randevu.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\Randevu.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Models\\Randevu.cs",
@@ -342,11 +332,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Models\\Randevu.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T10:50:50.808Z"
+              "WhenOpened": "2025-12-10T10:50:50.808Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "SignUpViewModel.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\SignUpViewModel.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Models\\SignUpViewModel.cs",
@@ -354,11 +345,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Models\\SignUpViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T06:55:03.131Z"
+              "WhenOpened": "2025-12-09T06:55:03.131Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Controllers\\HomeController.cs",
@@ -371,7 +363,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Program.cs",
+              "RelativeDocumentMoniker": "FitnessCenterProject\\Program.cs",
+              "ToolTip": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Program.cs",
+              "RelativeToolTip": "FitnessCenterProject\\Program.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAAEYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T16:38:06.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "HizmetApiModel.cs",
+              "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\HizmetApiModel.cs",
+              "RelativeDocumentMoniker": "FitnessCenterProject\\Models\\HizmetApiModel.cs",
+              "ToolTip": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\HizmetApiModel.cs",
+              "RelativeToolTip": "FitnessCenterProject\\Models\\HizmetApiModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T20:39:56.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Hizmet.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\Hizmet.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Models\\Hizmet.cs",
@@ -379,11 +397,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Models\\Hizmet.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T11:32:35.247Z"
+              "WhenOpened": "2025-12-08T11:32:35.247Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Views\\Shared\\Error.cshtml",
@@ -391,11 +410,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Shared\\Error.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-20T19:38:11.922Z"
+              "WhenOpened": "2025-12-20T19:38:11.922Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "DiyetInputModel.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\DiyetInputModel.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Models\\DiyetInputModel.cs",
@@ -403,11 +423,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Models\\DiyetInputModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-20T16:30:10.715Z"
+              "WhenOpened": "2025-12-20T16:30:10.715Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Uye.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\Uye.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Models\\Uye.cs",
@@ -415,11 +436,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Models\\Uye.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T14:26:43.388Z"
+              "WhenOpened": "2025-12-10T14:26:43.388Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Models\\ErrorViewModel.cs",
@@ -427,11 +449,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Models\\ErrorViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T14:26:00.278Z"
+              "WhenOpened": "2025-12-10T14:26:00.278Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "GeminiService.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\GeminiService.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Models\\GeminiService.cs",
@@ -439,11 +462,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Models\\GeminiService.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAYwCMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-20T16:36:55.486Z"
+              "WhenOpened": "2025-12-20T16:36:55.486Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "AppDbContextFactory.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\AppDbContextFactory.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Models\\AppDbContextFactory.cs",
@@ -451,11 +475,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Models\\AppDbContextFactory.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T14:25:56.874Z"
+              "WhenOpened": "2025-12-10T14:25:56.874Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\AppDbContext.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Models\\AppDbContext.cs",
@@ -463,11 +488,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Models\\AppDbContext.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAwwEYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T10:38:16.513Z"
+              "WhenOpened": "2025-12-10T10:38:16.513Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "AntrenorHizmet.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\AntrenorHizmet.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Models\\AntrenorHizmet.cs",
@@ -475,11 +501,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Models\\AntrenorHizmet.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T16:42:23.644Z"
+              "WhenOpened": "2025-12-08T16:42:23.644Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "AntrenorCreateVM.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\AntrenorCreateVM.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Models\\AntrenorCreateVM.cs",
@@ -487,11 +514,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Models\\AntrenorCreateVM.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-13T11:22:25.431Z"
+              "WhenOpened": "2025-12-13T11:22:25.431Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Antrenor.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Models\\Antrenor.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Models\\Antrenor.cs",
@@ -499,11 +527,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Models\\Antrenor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T16:18:24.935Z"
+              "WhenOpened": "2025-12-08T16:18:24.935Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "UyeController.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Controllers\\UyeController.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Controllers\\UyeController.cs",
@@ -511,11 +540,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Controllers\\UyeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T11:55:25.103Z"
+              "WhenOpened": "2025-12-08T11:55:25.103Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "RandevuOnayController.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Controllers\\RandevuOnayController.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Controllers\\RandevuOnayController.cs",
@@ -523,11 +553,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Controllers\\RandevuOnayController.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAACMAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-20T12:40:24.805Z"
+              "WhenOpened": "2025-12-20T12:40:24.805Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "RandevuController.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Controllers\\RandevuController.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Controllers\\RandevuController.cs",
@@ -535,11 +566,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Controllers\\RandevuController.cs",
               "ViewState": "AgIAANIAAAAAAAAAAAAiwGoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T10:51:49.818Z"
+              "WhenOpened": "2025-12-10T10:51:49.818Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "MusaitlikController.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Controllers\\MusaitlikController.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Controllers\\MusaitlikController.cs",
@@ -547,11 +579,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Controllers\\MusaitlikController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-19T18:21:02.981Z"
+              "WhenOpened": "2025-12-19T18:21:02.981Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "HizmetController.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Controllers\\HizmetController.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Controllers\\HizmetController.cs",
@@ -559,11 +592,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Controllers\\HizmetController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T11:35:39.834Z"
+              "WhenOpened": "2025-12-08T11:35:39.834Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "HizmetApiController.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Controllers\\HizmetApiController.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Controllers\\HizmetApiController.cs",
@@ -571,11 +605,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Controllers\\HizmetApiController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T20:41:37.565Z"
+              "WhenOpened": "2025-12-18T20:41:37.565Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "DiyetController.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Controllers\\DiyetController.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Controllers\\DiyetController.cs",
@@ -583,11 +618,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Controllers\\DiyetController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-20T16:04:41.254Z"
+              "WhenOpened": "2025-12-20T16:04:41.254Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "AntrenorController.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Controllers\\AntrenorController.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Controllers\\AntrenorController.cs",
@@ -595,11 +631,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Controllers\\AntrenorController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T14:21:13.077Z"
+              "WhenOpened": "2025-12-10T14:21:13.077Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "AdminnController.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Controllers\\AdminnController.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Controllers\\AdminnController.cs",
@@ -607,11 +644,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Controllers\\AdminnController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T11:12:39.14Z"
+              "WhenOpened": "2025-12-08T11:12:39.14Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Controllers\\AccountController.cs",
@@ -619,11 +657,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAFMAAAAAAAAAAAAswHcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T11:25:59.417Z"
+              "WhenOpened": "2025-12-08T11:25:59.417Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "Iletisim.cshtml",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Views\\Home\\Iletisim.cshtml",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Views\\Home\\Iletisim.cshtml",
@@ -631,11 +670,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Home\\Iletisim.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAIYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-17T17:17:11.434Z"
+              "WhenOpened": "2025-12-17T17:17:11.434Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Views\\Diyet\\Index.cshtml",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Views\\Diyet\\Index.cshtml",
@@ -643,11 +683,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Diyet\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-20T16:06:23.745Z"
+              "WhenOpened": "2025-12-20T16:06:23.745Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Views\\RandevuOnay\\Index.cshtml",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Views\\RandevuOnay\\Index.cshtml",
@@ -655,11 +696,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\RandevuOnay\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-20T12:24:30.205Z"
+              "WhenOpened": "2025-12-20T12:24:30.205Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "About.cshtml",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Views\\Home\\About.cshtml",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Views\\Home\\About.cshtml",
@@ -667,11 +709,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Home\\About.cshtml",
               "ViewState": "AgIAALwAAAAAAAAAAAAwwNgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-17T17:06:58.469Z"
+              "WhenOpened": "2025-12-17T17:06:58.469Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Views\\Home\\Index.cshtml",
@@ -679,11 +722,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAFYAAAAAAAAAAAAwwGgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-08T11:55:40.976Z"
+              "WhenOpened": "2025-12-08T11:55:40.976Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Views\\Antrenor\\Index.cshtml",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Views\\Antrenor\\Index.cshtml",
@@ -691,11 +735,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Antrenor\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-10T14:22:20.978Z"
+              "WhenOpened": "2025-12-10T14:22:20.978Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Views\\Hizmet\\Index.cshtml",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Views\\Hizmet\\Index.cshtml",
@@ -703,11 +748,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Hizmet\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-08T11:20:00.301Z"
+              "WhenOpened": "2025-12-08T11:20:00.301Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Views\\Musaitlik\\Index.cshtml",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Views\\Musaitlik\\Index.cshtml",
@@ -715,11 +761,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Musaitlik\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-20T08:29:14.582Z"
+              "WhenOpened": "2025-12-20T08:29:14.582Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Views\\Uye\\Index.cshtml",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Views\\Uye\\Index.cshtml",
@@ -727,11 +774,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Uye\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-08T11:55:30.718Z"
+              "WhenOpened": "2025-12-08T11:55:30.718Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Views\\Adminn\\Index.cshtml",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Views\\Adminn\\Index.cshtml",
@@ -739,11 +787,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Adminn\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-20T12:17:17.459Z"
+              "WhenOpened": "2025-12-20T12:17:17.459Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "Hizmetler.cshtml",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Views\\Uye\\Hizmetler.cshtml",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Views\\Uye\\Hizmetler.cshtml",
@@ -751,11 +800,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Uye\\Hizmetler.cshtml",
               "ViewState": "AgIAABoAAAAAAAAAAAAowEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-13T13:56:37.528Z"
+              "WhenOpened": "2025-12-13T13:56:37.528Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Views\\Hizmet\\Create.cshtml",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Views\\Hizmet\\Create.cshtml",
@@ -763,11 +813,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Hizmet\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-19T17:01:45.806Z"
+              "WhenOpened": "2025-12-19T17:01:45.806Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Views\\Antrenor\\Create.cshtml",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Views\\Antrenor\\Create.cshtml",
@@ -775,11 +826,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Antrenor\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-10T15:00:09.154Z"
+              "WhenOpened": "2025-12-10T15:00:09.154Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Views\\Antrenor\\Edit.cshtml",
               "RelativeDocumentMoniker": "FitnessCenterProject\\Views\\Antrenor\\Edit.cshtml",
@@ -787,23 +839,12 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Antrenor\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-10T14:59:47.79Z"
+              "WhenOpened": "2025-12-10T14:59:47.79Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 42,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Program.cs",
-              "RelativeDocumentMoniker": "FitnessCenterProject\\Program.cs",
-              "ToolTip": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\Program.cs",
-              "RelativeToolTip": "FitnessCenterProject\\Program.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAADwv0oAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-20T16:38:06.109Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\appsettings.json",
               "RelativeDocumentMoniker": "FitnessCenterProject\\appsettings.json",
@@ -811,7 +852,8 @@
               "RelativeToolTip": "FitnessCenterProject\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-20T16:40:41.835Z"
+              "WhenOpened": "2025-12-20T16:40:41.835Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -823,7 +865,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAABoAAAAAAAAAAAAowEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-13T14:10:41.688Z"
+              "WhenOpened": "2025-12-13T14:10:41.688Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -835,7 +878,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Account\\AccessDenied.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-19T05:05:12.896Z"
+              "WhenOpened": "2025-12-19T05:05:12.896Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -847,7 +891,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Account\\Login.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-08T10:18:36.556Z"
+              "WhenOpened": "2025-12-08T10:18:36.556Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -859,7 +904,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Account\\SignUp.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-08T11:38:25.874Z"
+              "WhenOpened": "2025-12-08T11:38:25.874Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -871,7 +917,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Musaitlik\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-20T08:49:10.496Z"
+              "WhenOpened": "2025-12-20T08:49:10.496Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -883,7 +930,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Musaitlik\\Edit.cshtml",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-13T18:55:57.106Z"
+              "WhenOpened": "2025-12-13T18:55:57.106Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -895,7 +943,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Randevu\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-19T17:03:14.479Z"
+              "WhenOpened": "2025-12-19T17:03:14.479Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -907,7 +956,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Randevu\\Details.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-19T17:03:08.96Z"
+              "WhenOpened": "2025-12-19T17:03:08.96Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -919,7 +969,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Randevu\\Delete.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-10T11:08:52.828Z"
+              "WhenOpened": "2025-12-10T11:08:52.828Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -931,7 +982,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Randevu\\Index.cshtml",
               "ViewState": "AgIAAB8AAAAAAAAAAAAwwDcAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-10T10:49:46.053Z"
+              "WhenOpened": "2025-12-10T10:49:46.053Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -943,7 +995,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Randevu\\Create.cshtml",
               "ViewState": "AgIAAEgAAAAAAAAAAAAwwFoAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-10T10:49:48.507Z"
+              "WhenOpened": "2025-12-10T10:49:48.507Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -955,7 +1008,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Musaitlik\\Delete.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-20T09:07:21.398Z"
+              "WhenOpened": "2025-12-20T09:07:21.398Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -967,7 +1021,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Uye\\Randevular.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-13T14:02:18.769Z"
+              "WhenOpened": "2025-12-13T14:02:18.769Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -979,7 +1034,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-10T10:55:14.249Z"
+              "WhenOpened": "2025-12-10T10:55:14.249Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -991,7 +1047,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Home\\Services.cshtml",
               "ViewState": "AgIAAK8AAAAAAAAAAAAowN0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-17T17:12:02.336Z"
+              "WhenOpened": "2025-12-17T17:12:02.336Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1003,7 +1060,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Hizmet\\Update.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-08T16:14:51.577Z"
+              "WhenOpened": "2025-12-08T16:14:51.577Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1015,7 +1073,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Hizmet\\Details.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-08T16:12:21.834Z"
+              "WhenOpened": "2025-12-08T16:12:21.834Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1027,7 +1086,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Hizmet\\Delete.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-10T11:10:08.627Z"
+              "WhenOpened": "2025-12-10T11:10:08.627Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1039,7 +1099,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Antrenor\\Details.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-10T14:59:45.968Z"
+              "WhenOpened": "2025-12-10T14:59:45.968Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1051,7 +1112,8 @@
               "RelativeToolTip": "FitnessCenterProject\\Views\\Antrenor\\Delete.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-10T14:59:44.429Z"
+              "WhenOpened": "2025-12-10T14:59:44.429Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1065,9 +1127,9 @@
             {
               "$type": "Document",
               "DocumentIndex": 64,
-              "Title": "dbo.AspNetRoles.sql",
+              "Title": "dbo.AspNetRoles [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/FitnessDB/True/SqlTable/dbo.AspNetRoles.sql",
-              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/FitnessDB/True/SqlTable/dbo.AspNetRoles.sql",
+              "ToolTip": "dbo.AspNetRoles [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
               "WhenOpened": "2025-12-09T07:02:50.002Z"
             },
@@ -1080,7 +1142,8 @@
               "ToolTip": "C:\\Users\\petek\\OneDrive\\Desktop\\Spor-Salonu-Web-Sitesi\\FitnessCenterProject\\FitnessCenterProject\\FitnessCenterProject.csproj",
               "RelativeToolTip": "FitnessCenterProject\\FitnessCenterProject.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-09T06:53:31.335Z"
+              "WhenOpened": "2025-12-09T06:53:31.335Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
